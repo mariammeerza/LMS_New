@@ -142,7 +142,8 @@ class Onboard2 extends StatelessWidget {
                     width: 80,
                     height: 80,
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 243, 233, 33), // Adjust the color as needed
+                      color: const Color.fromARGB(
+                          255, 243, 233, 33), // Adjust the color as needed
                       shape: BoxShape.circle,
                       border: Border.all(width: 2, color: Colors.black),
                     ),
