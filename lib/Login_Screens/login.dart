@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Home_Screens/home_1.dart';
 import 'package:flutter_application_1/Login_Screens/ForgotPassword.dart';
+import 'package:flutter_application_1/SignUp_Screens/signup_1.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -34,14 +36,14 @@ class _LoginState extends State<Login> {
             ),
             // Image
             Positioned(
-              top: 100.0, // Adjust the position as needed
+              top: 100.0,
               child: Image.asset(
-                'assets/img1splash.png', // Replace with your image path
-                height: 150, // Adjust the height as needed
+                'assets/img1splash.png',
+                height: 150,
               ),
             ),
             const Positioned(
-              top: 370.0,
+              top: 330.0,
               child: Text(
                 'Login',
                 style: TextStyle(
@@ -52,28 +54,46 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            // Phone Number TextField with Smartphone Icon on the Right
+            // Phone Number TextField without Inner Shadow
             Positioned(
-              top: 435.0,
-              child: Container(
+              top: 400.0,
+              child: SizedBox(
                 width: 380.0,
-                child: TextField(
-                  style: const TextStyle(
-                    fontFamily: 'OnboardFont2',
-                    fontSize: 14.0,
-                    color: Color(0xff494949),
-                    fontWeight: FontWeight.normal,
-                  ),
-                  decoration: InputDecoration(
-                    labelText: 'Phone Number',
-                    filled: true,
-                    fillColor: const Color(0xffE6FFE1),
-                    border: OutlineInputBorder(
+                child: ClipPath(
+                  clipper: ShapeBorderClipper(
+                    shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),
-                    suffixIcon: const Icon(
-                      Icons.smartphone, // Use the smartphone icon
-                      color: Color(0xff494949), // Adjust the icon color
+                  ),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xffE6FFE1),
+                      borderRadius: BorderRadius.circular(30.0),
+                      // Remove the BoxShadow from here
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
+                      child: TextField(
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont2',
+                          fontSize: 14.0,
+                          color: Color(0xff494949),
+                          fontWeight: FontWeight.normal,
+                        ),
+                        decoration: InputDecoration(
+                          labelText: 'Phone Number',
+                          labelStyle: TextStyle(
+                            color: Color(0xff494949),
+                          ),
+                          filled: true,
+                          fillColor: Colors.transparent,
+                          border: InputBorder.none,
+                          suffixIcon: Icon(
+                            Icons.smartphone,
+                            color: Color(0xff494949),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -83,29 +103,47 @@ class _LoginState extends State<Login> {
             const SizedBox(
               height: 20,
             ),
-            // Password TextField with Lock Icon on the Right
+            // Password TextField without Inner Shadow
             Positioned(
-              top: 500.0,
-              child: Container(
+              top: 490.0,
+              child: SizedBox(
                 width: 380.0,
-                child: TextField(
-                  obscureText: true, // Set to true for a password field
-                  style: const TextStyle(
-                    fontFamily: 'OnboardFont2',
-                    fontSize: 14.0,
-                    color: Color(0xff494949),
-                    fontWeight: FontWeight.normal,
-                  ),
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    filled: true,
-                    fillColor: const Color(0xffE6FFE1),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
+                child: ClipPath(
+                  clipper: ShapeBorderClipper(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0),
                     ),
-                    suffixIcon: const Icon(
-                      Icons.lock, // Use the lock icon
-                      color: Color(0xff494949), // Adjust the icon color
+                  ),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xffE6FFE1),
+                      borderRadius: BorderRadius.circular(30.0),
+                      // Remove the BoxShadow from here
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
+                      child: TextField(
+                        obscureText: true,
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont2',
+                          fontSize: 14.0,
+                          color: Color(0xff494949),
+                          fontWeight: FontWeight.normal,
+                        ),
+                        decoration: InputDecoration(
+                          labelText: 'Password',
+                          labelStyle: TextStyle(
+                            color: Color(0xff494949),
+                          ),
+                          filled: true,
+                          fillColor: Colors.transparent,
+                          border: InputBorder.none,
+                          suffixIcon: Icon(
+                            Icons.lock,
+                            color: Color(0xff494949),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -113,8 +151,8 @@ class _LoginState extends State<Login> {
             ),
             // Forgot Password? text
             Positioned(
-              top: 570.0,
-              right: 20,
+              top: 555.0,
+              right: 25,
               child: GestureDetector(
                 onTap: () {
                   // Navigate to ForgotPasswordPage
@@ -129,25 +167,33 @@ class _LoginState extends State<Login> {
                   'Forgot Password?',
                   style: TextStyle(
                     fontFamily: 'LoginPage1',
-                    fontSize: 14.0,
+                    fontSize: 16.0,
                     color: Colors.white,
                     fontWeight: FontWeight.normal,
                   ),
                 ),
               ),
             ),
-            // Login Button
+            // Login Button with Border and Shadow
             Positioned(
-              top: 620.0,
+              top: 615.0,
               child: ElevatedButton(
                 onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomePage(),
+                    ),
+                  );
                   // Add your login functionality here
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: const Color(0xff494949),
-                  backgroundColor: Colors.yellow, // Text color
+                  backgroundColor: Colors.yellow,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
+                    borderRadius: BorderRadius.circular(25.0),
+                    side:
+                        const BorderSide(color: Color(0xff494949), width: 2.0),
                   ),
                 ),
                 child: const Padding(
@@ -159,6 +205,77 @@ class _LoginState extends State<Login> {
                       fontSize: 26.0,
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                ),
+              ),
+            ),
+            // Continue with Google Button
+            Positioned(
+              top: 705.0,
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  // Add your "Continue with Google" functionality here
+                },
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: const Color(0xff494949),
+                  backgroundColor: const Color(0xffE6FFE1),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                    side:
+                        const BorderSide(color: Color(0xff494949), width: 2.0),
+                  ),
+                ),
+                icon:
+                    Image.asset('assets/google.png', height: 30.0, width: 30.0),
+                label: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                  child: Text(
+                    'or Continue with Google',
+                    style: TextStyle(
+                      fontFamily: 'OnboardFont2',
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            // Don't have an account? Sign up text
+            Positioned(
+              top: 760.0,
+              left: 85,
+              child: GestureDetector(
+                onTap: () {},
+                child: const Text(
+                  "Don't have an account? ",
+                  style: TextStyle(
+                    fontFamily: 'OnboardFont2',
+                    fontSize: 16.0,
+                    color: Color(0xff494949),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 760.0,
+              left: 270,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignUp(),
+                    ),
+                  );
+                  // Add your navigation to the Sign-up screen here
+                },
+                child: const Text(
+                  'Sign Up',
+                  style: TextStyle(
+                    fontFamily: 'OnboardFont2',
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xff494949),
                   ),
                 ),
               ),
