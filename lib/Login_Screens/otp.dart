@@ -1,96 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Login_Screens/reset_password.dart';
 import 'package:pinput/pinput.dart';
-import 'package:flutter_application_1/Home_Screens/home_1.dart';
 import 'dart:async';
 
-class VerificationPage extends StatefulWidget {
-  const VerificationPage({Key? key}) : super(key: key);
+class OtpVerify extends StatefulWidget {
+  const OtpVerify({super.key});
 
   @override
-  State<VerificationPage> createState() => _VerificationPageState();
+  State<OtpVerify> createState() => _OtpVerifyState();
 }
 
-class _VerificationPageState extends State<VerificationPage> {
-  void _showDialog() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          contentPadding: const EdgeInsets.all(16),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Image.asset(
-                'assets/welcome.png',
-                height: MediaQuery.of(context).size.width * 0.3, // Adjusted image height for responsiveness
-                width: MediaQuery.of(context).size.width * 0.8, // Adjusted image width for responsiveness
-              ),
-              
-              const SizedBox(height: 16),
-              const Text(
-                'Welcome Onboard!',
-                style: TextStyle(
-                  fontFamily: 'OnboardFont1',
-                  fontSize: 28.0,
-                  color: Color(0xff494949),
-                ),
-              ),
-              const SizedBox(height: 16),
-              const Text(
-                'You have successfully created',
-                style: TextStyle(
-                  fontFamily: 'OnboardFont2',
-                  fontSize: 18.0,
-                  color: Color(0xff494949),
-                ),
-              ),
-              const Text(
-                'an account',
-                style: TextStyle(
-                  fontFamily: 'OnboardFont2',
-                  fontSize: 18.0,
-                  color: Color(0xff494949),
-                ),
-              ),
-            ],
-          ),
-          actions: [
-            Center(
-              child: MaterialButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  _navigateToHomePage();
-                },
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(40.0),
-                  side: const BorderSide(
-                    color: Color(0xff494949),
-                    width: 2.0,
-                  ),
-                ),
-                color: Colors.yellow,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.04,
-                    vertical: MediaQuery.of(context).size.width * 0.02,
-                  ),
-                  child: const Text(
-                    'Let\'s Go',
-                    style: TextStyle(
-                      fontFamily: 'OnboardFont1',
-                      fontSize: 18.0,
-                      color: Color(0xff494949),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
+class _OtpVerifyState extends State<OtpVerify> {
   late Timer _resendCodeTimer;
   int _countdownSeconds = 10; // Set the initial countdown time to 10 seconds
 
@@ -112,15 +32,6 @@ class _VerificationPageState extends State<VerificationPage> {
   void dispose() {
     _resendCodeTimer.cancel(); // Cancel the timer when the widget is disposed
     super.dispose();
-  }
-
-  void _navigateToHomePage(){
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const HomePage(),
-        ),
-    );
   }
 
   @override
@@ -173,15 +84,15 @@ class _VerificationPageState extends State<VerificationPage> {
           ),
           Positioned(
             top: MediaQuery.of(context).size.width * 0.07,
-            left: 0.0,
-            right: MediaQuery.of(context).size.width * 0.55,
+            left: MediaQuery.of(context).size.width * 0.0,
+            right: MediaQuery.of(context).size.width * 0.67,
             child: const Center(
               child: Text(
-                'Almost there',
+                'Enter OTP',
                 style: TextStyle(
-                  fontFamily: 'LoginPage',
+                  fontFamily: 'LoginPage1',
                   fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.normal,
                   color: Color(0xff494949),
                 ),
               ),
@@ -190,12 +101,12 @@ class _VerificationPageState extends State<VerificationPage> {
           Positioned(
             top: MediaQuery.of(context).size.width * 0.15,
             left: MediaQuery.of(context).size.width * 0.025,
-            right: MediaQuery.of(context).size.width * 0.25,
+            right: MediaQuery.of(context).size.width * 0.26,
             child: const Center(
               child: Text(
-                'Enter the code sent by SMS for verification',
+                'Enter the code sent by Email for verification',
                 style: TextStyle(
-                  fontFamily: 'LoginPage',
+                  fontFamily: 'OnboardFont2',
                   fontSize: 14.0,
                   fontWeight: FontWeight.normal,
                   color: Color(0xff494949),
@@ -225,14 +136,20 @@ class _VerificationPageState extends State<VerificationPage> {
             left: MediaQuery.of(context).size.width * 0.025,
             right: MediaQuery.of(context).size.width * 0.03,
             child: ElevatedButton(
-              onPressed: _showDialog,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ResetPassword(),
+                  ),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 foregroundColor: const Color(0xff494949),
                 backgroundColor: Colors.yellow,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50.0),
                   side: const BorderSide(color: Color(0xff494949), width: 2.0),
-
                 ),
               ),
               child: Padding(

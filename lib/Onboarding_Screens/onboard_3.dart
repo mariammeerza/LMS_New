@@ -6,6 +6,9 @@ class Onboard3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -15,121 +18,105 @@ class Onboard3 extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              // New asset at top left corner
+              // Positioned(
+              //   top: screenHeight * 0.03,
+              //   left: screenWidth * 0.3,
+              //   child: Image.asset(
+              //     "assets/star2.png",
+              //     height: screenHeight * 0.07,
+              //   ),
+              // ),
+              // Positioned(
+              //   top: screenHeight * 0.08,
+              //   left: screenWidth * 0.6,
+              //   child: Image.asset(
+              //     "assets/clock.png",
+              //     height: screenHeight * 0.1,
+              //   ),
+              // ),
               Positioned(
-                top: 5,
-                left: 100,
+                top: screenHeight * 0.08,
                 child: Image.asset(
-                  "assets/star2.png",
-                  height: 60, // Adjust the height as needed
+                  "assets/onboard3main.png",
+                  height: screenHeight * 0.4,
                 ),
               ),
+              // Positioned(
+              //   top: screenHeight * -0.02,
+              //   right: screenWidth * 0.4,
+              //   child: Image.asset(
+              //     "assets/onboard3.png",
+              //     height: screenHeight * 0.4,
+              //   ),
+              // ),
               Positioned(
-                top: 60,
-                left: 300,
-                child: Image.asset(
-                  "assets/clock.png",
-                  height: 80, // Adjust the height as needed
-                ),
-              ),
-              Positioned(
-                top: 80,
-                child: Image.asset(
-                  "assets/object2.png",
-                  height: 350,
-                ),
-              ),
-              Positioned(
-                top: -30,
-                right: 160,
-                child: Image.asset(
-                  "assets/onboard3.png",
-                  height: 350,
-                ),
-              ),
-              Positioned(
-                top: 390, // Adjusted position to shift upwards
+                top: screenHeight * 0.49,
                 child: Container(
-                  width: 350,
-                  height: 350,
+                  width: screenWidth * 0.8,
+                  height: screenHeight * 0.4,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(40),
+                    borderRadius: BorderRadius.circular(screenHeight * 0.04),
                     border: Border.all(width: 2, color: Colors.black),
                     boxShadow: const [
                       BoxShadow(color: Colors.black, offset: Offset(5.0, 6.0)),
                     ],
                   ),
-                  child: const Column(
+                  child: Column(
                     children: [
-                      SizedBox(height: 35),
-                      Positioned(
-                        top: 120.0,
-                        child: Text(
-                          "Mockup Exams",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontFamily: 'OnboardFont1',
-                            fontSize: 35,
-                            color: Color(0xff494949),
-                            fontWeight: FontWeight.bold,
-                          ),
+                      SizedBox(height: screenHeight * 0.05),
+                      Text(
+                        "Mockup Exams",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont1',
+                          fontSize: screenHeight * 0.048,
+                          color: Color(0xff494949),
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 2),
-                      Positioned(
-                        top: 140.0,
-                        child: Text(
-                          "& Quiz",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontFamily: 'OnboardFont1',
-                            fontSize: 35,
-                            color: Color(0xff494949),
-                            fontWeight: FontWeight.bold,
-                          ),
+                      SizedBox(height: screenHeight * 0.005),
+                      Text(
+                        "& Quiz",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont1',
+                          fontSize: screenHeight * 0.048,
+                          color: Color(0xff494949),
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 30),
-                      Positioned(
-                        top: 140.0,
-                        child: Text(
-                          "Simulate exams, test your",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontFamily: 'OnboardFont2',
-                            fontSize: 21,
-                            color: Color(0xff494949),
-                            fontWeight: FontWeight.normal,
-                          ),
+                      SizedBox(height: screenHeight * 0.02),
+                      Text(
+                        "Simulate exams, test your",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont2',
+                          fontSize: screenHeight * 0.025,
+                          color: Color(0xff494949),
+                          fontWeight: FontWeight.normal,
                         ),
                       ),
-                      SizedBox(height: 3),
-                      Positioned(
-                        top: 140.0,
-                        child: Text(
-                          "knowledge, and conquer your",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontFamily: 'OnboardFont2',
-                            fontSize: 21,
-                            color: Color(0xff494949),
-                            fontWeight: FontWeight.normal,
-                          ),
+                      SizedBox(height: screenHeight * 0.005),
+                      Text(
+                        "knowledge, and conquer your",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont2',
+                          fontSize: screenHeight * 0.025,
+                          color: const Color(0xff494949),
+                          fontWeight: FontWeight.normal,
                         ),
                       ),
-                      SizedBox(height: 3),
-                      Positioned(
-                        top: 140.0,
-                        child: Text(
-                          "study goals.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontFamily: 'OnboardFont2',
-                            fontSize: 21,
-                            color: Color(0xff494949),
-                            fontWeight: FontWeight.normal,
-                          ),
+                      SizedBox(height: screenHeight * 0.005),
+                      Text(
+                        "study goals.",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont2',
+                          fontSize: screenHeight * 0.025,
+                          color: Color(0xff494949),
+                          fontWeight: FontWeight.normal,
                         ),
                       ),
                     ],
@@ -137,7 +124,7 @@ class Onboard3 extends StatelessWidget {
                 ),
               ),
               Positioned(
-                bottom: 40,
+                bottom: screenHeight * 0.02,
                 child: GestureDetector(
                   onTap: () {
                     // Navigate to the Login screen
@@ -149,8 +136,8 @@ class Onboard3 extends StatelessWidget {
                     );
                   },
                   child: Container(
-                    width: 80,
-                    height: 80,
+                    width: screenHeight * 0.1,
+                    height: screenHeight * 0.1,
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 243, 233, 33),
                       shape: BoxShape.circle,

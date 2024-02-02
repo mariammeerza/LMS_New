@@ -7,6 +7,9 @@ class Onboard1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -16,31 +19,26 @@ class Onboard1 extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              // New asset at top left corner
               Positioned(
-                top: 20,
-                left: 20,
+                top: screenHeight * 0.01,
+                left: screenWidth * 0.04,
                 child: Image.asset(
                   "assets/star.png",
-                  height: 40, // Adjust the height as needed
+                  height: screenHeight * 0.05,
                 ),
               ),
-
-              // Image
               Positioned(
-                top: 30,
+                top: screenHeight * 0.07,
                 child: Image.asset(
                   "assets/onboarding_1.png",
-                  height: 350,
+                  height: screenHeight * 0.4,
                 ),
               ),
-
-              // Container below the image
               Positioned(
-                top: 390, // Adjusted position to shift upwards
+                top: screenHeight * 0.46,
                 child: Container(
-                  width: 350,
-                  height: 350,
+                  width: screenWidth * 0.9,
+                  height: screenHeight * 0.4,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(40),
@@ -49,100 +47,82 @@ class Onboard1 extends StatelessWidget {
                       BoxShadow(color: Colors.black, offset: Offset(5.0, 6.0)),
                     ],
                   ),
-                  child: const Column(
+                  child: Column(
                     children: [
-                      SizedBox(height: 35),
-                      Positioned(
-                        top: 120.0,
-                        child: Text(
-                          "Connect, Learn",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontFamily: 'OnboardFont1',
-                            fontSize: 35,
-                            color: Color(0xff494949),
-                            fontWeight: FontWeight.bold,
-                          ),
+                      SizedBox(height: screenHeight * 0.02),
+                      Text(
+                        "Connect, Learn",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont1',
+                          fontSize: screenHeight * 0.05,
+                          color: const Color(0xff494949),
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 2),
-                      Positioned(
-                        top: 140.0,
-                        child: Text(
-                          "& Grow",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontFamily: 'OnboardFont1',
-                            fontSize: 35,
-                            color: Color(0xff494949),
-                            fontWeight: FontWeight.bold,
-                          ),
+                      SizedBox(height: screenHeight * 0.005),
+                      Text(
+                        "& Grow",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont1',
+                          fontSize: screenHeight * 0.05,
+                          color: const Color(0xff494949),
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 30),
-                      Positioned(
-                        top: 140.0,
-                        child: Text(
-                          "Engage, collaborate, and learn",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontFamily: 'OnboardFont2',
-                            fontSize: 21,
-                            color: Color(0xff494949),
-                            fontWeight: FontWeight.normal,
-                          ),
+                      SizedBox(height: screenHeight * 0.02),
+                      Text(
+                        "Engage, collaborate, and learn",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont2',
+                          fontSize: screenHeight * 0.025,
+                          color: const Color(0xff494949),
+                          fontWeight: FontWeight.normal,
                         ),
                       ),
-                      SizedBox(height: 3),
-                      Positioned(
-                        top: 140.0,
-                        child: Text(
-                          "together with our vibrant",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontFamily: 'OnboardFont2',
-                            fontSize: 21,
-                            color: Color(0xff494949),
-                            fontWeight: FontWeight.normal,
-                          ),
+                      SizedBox(height: screenHeight * 0.005),
+                      Text(
+                        "together with our vibrant",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont2',
+                          fontSize: screenHeight * 0.025,
+                          color: const Color(0xff494949),
+                          fontWeight: FontWeight.normal,
                         ),
                       ),
-                      SizedBox(height: 3),
-                      Positioned(
-                        top: 140.0,
-                        child: Text(
-                          "community.",
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontFamily: 'OnboardFont2',
-                            fontSize: 21,
-                            color: Color(0xff494949),
-                            fontWeight: FontWeight.normal,
-                          ),
+                      SizedBox(height: screenHeight * 0.005),
+                      Text(
+                        "community.",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont2',
+                          fontSize: screenHeight * 0.025,
+                          color: const Color(0xff494949),
+                          fontWeight: FontWeight.normal,
                         ),
                       ),
                     ],
                   ),
                 ),
               ),
-
-              // New asset at bottom right corner
               Positioned(
-                bottom: 50,
-                left: 160,
+                bottom: screenHeight * 0.055,
+                left: screenWidth * 0.4,
                 child: GestureDetector(
                   onTap: () {
-                    // Navigate to the next page
                     pageController.nextPage(
                       duration: const Duration(milliseconds: 500),
                       curve: Curves.easeIn,
                     );
                   },
                   child: Container(
-                    width: 80,
-                    height: 80,
+                    width: screenWidth * 0.20,
+                    height: screenWidth * 0.20,
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 243, 233, 33), // Adjust the color as needed
+                      color: const Color.fromARGB(255, 243, 233, 33),
                       shape: BoxShape.circle,
                       border: Border.all(width: 2, color: Colors.black),
                     ),
@@ -152,16 +132,14 @@ class Onboard1 extends StatelessWidget {
                       size: 40,
                     ),
                   ),
-                  
                 ),
               ),
-              // New asset at bottom right corner
               Positioned(
-                bottom: 15,
-                right: 20,
+                top: screenHeight * 0.83,
+                right: screenWidth*0.1,
                 child: Image.asset(
                   "assets/vector.png",
-                  height: 80, // Adjust the height as needed
+                  height: screenHeight * 0.15,
                 ),
               ),
             ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Login_Screens/login.dart';
+import 'package:flutter_application_1/SignUp_Screens/referral.dart';
 import 'package:flutter_application_1/SignUp_Screens/verification.dart';
 
 class SignUp extends StatefulWidget {
@@ -383,7 +384,7 @@ class _SignUpState extends State<SignUp> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const SignUp(),
+                      builder: (context) => const ReferralPage(),
                     ),
                   );
                 },
