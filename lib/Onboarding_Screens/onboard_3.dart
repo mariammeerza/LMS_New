@@ -38,7 +38,7 @@ class Onboard3 extends StatelessWidget {
                 top: screenHeight * 0.08,
                 child: Image.asset(
                   "assets/onboard3main.png",
-                  height: screenHeight * 0.4,
+                  height: screenHeight * 0.35,
                 ),
               ),
               // Positioned(
@@ -50,7 +50,7 @@ class Onboard3 extends StatelessWidget {
               //   ),
               // ),
               Positioned(
-                top: screenHeight * 0.49,
+                top: screenHeight * 0.45,
                 child: Container(
                   width: screenWidth * 0.8,
                   height: screenHeight * 0.4,
@@ -64,7 +64,7 @@ class Onboard3 extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      SizedBox(height: screenHeight * 0.05),
+                      SizedBox(height: screenHeight * 0.03),
                       Text(
                         "Mockup Exams",
                         textAlign: TextAlign.justify,
@@ -75,7 +75,7 @@ class Onboard3 extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: screenHeight * 0.005),
+                      SizedBox(height: screenHeight * 0.004),
                       Text(
                         "& Quiz",
                         textAlign: TextAlign.justify,
@@ -86,7 +86,7 @@ class Onboard3 extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: screenHeight * 0.02),
+                      SizedBox(height: screenHeight * 0.015),
                       Text(
                         "Simulate exams, test your",
                         textAlign: TextAlign.justify,
@@ -124,7 +124,7 @@ class Onboard3 extends StatelessWidget {
                 ),
               ),
               Positioned(
-                bottom: screenHeight * 0.02,
+                bottom: screenHeight * 0.05,
                 child: GestureDetector(
                   onTap: () {
                     // Navigate to the Login screen

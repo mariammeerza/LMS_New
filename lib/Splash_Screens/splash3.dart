@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Onboarding_Screens/onboarding.dart';
+import 'package:flutter_application_1/Splash_Screens/splash.dart';
 
 class SplashScreen3 extends StatefulWidget {
   const SplashScreen3({super.key});
@@ -25,7 +25,7 @@ class _SplashScreenState3 extends State<SplashScreen3> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const Onboarding(),
+          builder: (context) => const SplashScreen(),
         ),
       );
     });
@@ -48,22 +48,22 @@ class _SplashScreenState3 extends State<SplashScreen3> {
           child: Stack(
             alignment: Alignment.center,
             children: [
+              // Positioned(
+              //   top: 100,
+              //   left: 10,
+              //   child: Image.asset(
+              //     "assets/splash3.png",
+              //     height: 160,
+              //   ),
+              // ),
               Positioned(
-                top: 100,
-                left: 10,
-                child: Image.asset(
-                  "assets/splash3.png",
-                  height: 160,
-                ),
-              ),
-              Positioned(
-                top: 90,
+                top: -5,
                 child: AnimatedOpacity(
                   opacity: opacityLevel,
-                  duration: const Duration(seconds: 2),
+                  duration: const Duration(seconds: 5),
                   child: Image.asset(
-                    "assets/Owl.png",
-                    height: 650,
+                    "assets/splashscreen3.gif",
+                    height: 900,
                   ),
                 ),
               ),

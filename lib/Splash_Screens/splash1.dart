@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Splash_Screens/splash2.dart';
+import 'package:flutter_application_1/Splash_Screens/splash3.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
         context,
         PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
-              const SplashScreen2(),
+              const SplashScreen3(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(
               opacity: animation,
@@ -56,33 +56,33 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Stack(
             alignment: Alignment.center,
             children: [
+              // Positioned(
+              //   top: 100,
+              //   left: 10,
+              //   child: Image.asset(
+              //     "assets/splashscreen1.png",
+              //     height: 160,
+              //   ),
+              // ),
               Positioned(
-                top: 100,
-                left: 10,
-                child: Image.asset(
-                  "assets/vector.png",
-                  height: 160,
-                ),
-              ),
-              Positioned(
-                top: 90,
+                top: 10,
                 child: AnimatedOpacity(
                   opacity: opacityLevel,
                   duration: const Duration(seconds: 2),
                   child: Image.asset(
-                    "assets/img1splash.png",
-                    height: 650,
+                    "assets/splashscreen1.png",
+                    height: 900,
                   ),
                 ),
               ),
-              Positioned(
-                bottom: 100,
-                right: 10,
-                child: Image.asset(
-                  "assets/Group.png",
-                  height: 160,
-                ),
-              ),
+              // Positioned(
+              //   bottom: 100,
+              //   right: 10,
+              //   child: Image.asset(
+              //     "assets/Group.png",
+              //     height: 160,
+              //   ),
+              // ),
             ],
           ),
         ),

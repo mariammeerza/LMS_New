@@ -3,7 +3,7 @@ import 'package:flutter_application_1/Login_Screens/login.dart';
 import 'package:flutter_application_1/Onboarding_Screens/onboard_1.dart';
 import 'package:flutter_application_1/Onboarding_Screens/onboard_2.dart';
 import 'package:flutter_application_1/Onboarding_Screens/onboard_3.dart';
-
+import 'package:dots_indicator/dots_indicator.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({Key? key}) : super(key: key);
@@ -14,6 +14,7 @@ class Onboarding extends StatefulWidget {
 
 class _OnboardingScreen extends State<Onboarding> {
   PageController _controller = PageController();
+  double currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,9 @@ class _OnboardingScreen extends State<Onboarding> {
           PageView(
             controller: _controller,
             onPageChanged: (index) {
-              // You can add logic here if needed
+              setState(() {
+                currentPage = index.toDouble();
+              });
             },
             children: [
               Onboard1(pageController: _controller),
@@ -43,7 +46,7 @@ class _OnboardingScreen extends State<Onboarding> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const  Login(),
+                    builder: (context) => const Login(),
                   ),
                 );
               },
@@ -55,6 +58,24 @@ class _OnboardingScreen extends State<Onboarding> {
                   fontSize: 21.0,
                   fontWeight: FontWeight.normal,
                 ),
+              ),
+            ),
+          ),
+
+          // Dots Indicator
+          Positioned(
+            bottom: 150.0,
+            left: 0,
+            right: 0,
+            child: DotsIndicator(
+              dotsCount: 3,
+              position: currentPage.toInt(),
+              decorator: DotsDecorator(
+                size: const Size.square(9.0),
+                activeSize: const Size(18.0, 9.0),
+                activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+                color: Colors.grey,
+                activeColor: const Color(0xffB4D8AE),
               ),
             ),
           ),

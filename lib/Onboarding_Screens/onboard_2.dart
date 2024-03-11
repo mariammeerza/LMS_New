@@ -55,7 +55,7 @@ class Onboard2 extends StatelessWidget {
                         textAlign: TextAlign.justify,
                         style: TextStyle(
                           fontFamily: 'OnboardFont1',
-                          fontSize: screenHeight * 0.04,
+                          fontSize: screenHeight * 0.045,
                           color: Color(0xff494949),
                           fontWeight: FontWeight.bold,
                         ),
@@ -66,7 +66,7 @@ class Onboard2 extends StatelessWidget {
                         textAlign: TextAlign.justify,
                         style: TextStyle(
                           fontFamily: 'OnboardFont1',
-                          fontSize: screenHeight * 0.04,
+                          fontSize: screenHeight * 0.045,
                           color: Color(0xff494949),
                           fontWeight: FontWeight.bold,
                         ),
