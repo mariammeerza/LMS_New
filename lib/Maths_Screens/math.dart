@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Home_Screens/customnavibar.dart';
 import 'package:flutter_application_1/Maths_Screens/lessons.dart';
 import 'package:flutter_application_1/Quiz_Screens/quiz.dart';
 

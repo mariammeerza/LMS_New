@@ -38,6 +38,7 @@ class _SemiCircleCustomBarState extends State<SemiCircleCustomBar> {
         onTap: (index) {
           setState(() {
             _currentIndex = index;
+            _navigateToPage(index);
           });
         },
       ),
@@ -53,52 +54,41 @@ class _SemiCircleCustomBarState extends State<SemiCircleCustomBar> {
         Text(
           label,
           style: const TextStyle(
-          fontFamily: 'NavBar',
-          fontSize: 16, // Adjust the font size as needed
-          fontWeight: FontWeight.bold, // Adjust the font weight as needed
-          color: Color(0XFF454545), // Adjust the text color as needed
-        ),
+            fontFamily: 'NavBar',
+            fontSize: 16, // Adjust the font size as needed
+            fontWeight: FontWeight.bold, // Adjust the font weight as needed
+            color: Color(0XFF454545), // Adjust the text color as needed
           ),
+        ),
       ],
     );
   }
+
+  void _navigateToPage(int index) {
+    switch (index) {
+      case 0:
+        // Navigate to Home page
+        Navigator.pushReplacementNamed(context, '/home');
+        break;
+      case 1:
+        // Navigate to Learn page
+        Navigator.pushReplacementNamed(context, '/learn');
+        break;
+      case 2:
+        // Navigate to AI Tutor page
+        Navigator.pushReplacementNamed(context, '/ai_tutor');
+        break;
+      case 3:
+        // Navigate to Test page
+        Navigator.pushReplacementNamed(context, '/test');
+        break;
+      case 4:
+        // Navigate to Connect page
+        Navigator.pushReplacementNamed(context, '/connect');
+        break;
+      default:
+        // Do nothing
+        break;
+    }
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import 'package:flutter/material.dart';
-// import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-
-// class SemiCircleCustomBar extends StatelessWidget {
-//   const SemiCircleCustomBar({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return BottomAppBar(
-//         shape: const CircularNotchedRectangle(),
-//         child: Row(
-//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//             children: <Widget>[
-//               Image.asset('assets/home3.png', width: 30, height: 30),
-//               Image.asset('assets/learn.png', width: 30, height: 30),
-//               Image.asset('assets/ai_icon.png', width: 60, height: 60),
-//               Image.asset('assets/test.png', width: 30, height: 30),
-//               Image.asset('assets/Connect.png', width: 30, height: 30),
-//             ])
-//         // Add more icons/buttons here
-//         );
-//   }
-// }

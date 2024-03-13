@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/AI_Screens/ai_tutor.dart';
+import 'package:flutter_application_1/Connect_Screens/connect.dart';
+import 'package:flutter_application_1/Home_Screens/home_1.dart';
+import 'package:flutter_application_1/Learn_screens/learn.dart';
 import 'package:flutter_application_1/Splash_Screens/splash1.dart';
+import 'package:flutter_application_1/Test_Screens/test.dart';
 // import 'package:flutter_application_1/splash.dart';
 
 void main() {
@@ -15,6 +20,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'LMS',
+      initialRoute: '/',
+      routes: {
+        '/home':(context)=>const HomePage(),
+        '/learn':(context) => const Learn(),
+        '/ai_tutor':(context)=> const AITutor(),
+        '/test':(context) => const TestScreen(),
+        '/connect':(context) => const Connect(),
+      },
       theme: ThemeData(
         // This is the theme of your application.
         //
