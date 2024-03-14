@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Home_Screens/home_1.dart';
 import 'package:flutter_application_1/Maths_Screens/lessons.dart';
 import 'package:flutter_application_1/Quiz_Screens/quiz.dart';
 
@@ -40,7 +41,12 @@ class _MathsState extends State<Maths> {
               icon: const Icon(Icons.arrow_back),
               iconSize: 35,
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HomePage(),
+                  ),
+                );
               },
             ),
           ),

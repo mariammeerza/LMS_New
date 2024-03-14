@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Home_Screens/customnavibar.dart';
 import 'package:flutter_application_1/Maths_Screens/basicoperations.dart';
+import 'package:flutter_application_1/Maths_Screens/math.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});
@@ -44,158 +45,170 @@ class _QuizScreenState extends State<QuizScreen> {
         ),
         backgroundColor: const Color.fromARGB(255, 180, 216, 174),
       ),
-      body: Stack(children: [
-        Container(
-          width: double.infinity,
-          height: double.infinity,
-          color: const Color.fromARGB(255, 180, 216, 174),
-        ),
-        Padding(
-          padding: EdgeInsets.only(
-            top: screenHeight * 0.05,
-            left: MediaQuery.of(context).size.width * 0.03,
+      body: Stack(
+        children: [
+          Container(
+            width: double.infinity,
+            height: double.infinity,
+            color: const Color.fromARGB(255, 180, 216, 174),
           ),
-          child: Column(
-            children: [
-              const Text(
-                'Lessons',
-                style: TextStyle(
-                  fontFamily: 'OnboardFont2',
-                  fontSize: 24.0,
-                  color: Color(0xff494949),
+          Padding(
+            padding: EdgeInsets.only(
+              top: screenHeight * 0.05,
+              left: MediaQuery.of(context).size.width * 0.03,
+            ),
+            child: Column(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Maths(),
+                      ),
+                        );
+                    // Add your action for the Lessons section here
+                  },
+                  child: const Text(
+                    'Lessons',
+                    style: TextStyle(
+                      fontFamily: 'OnboardFont2',
+                      fontSize: 24.0,
+                      color: Color(0xff494949),
+                    ),
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 3,
-                width: 200,
-                child: Container(
-                  color: quizClicked ? Colors.white : Colors.transparent,
-                ),
-              ),
-            ],
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(
-            top: screenHeight * 0.05,
-            left: MediaQuery.of(context).size.width * 0.5,
-          ),
-          child: Column(
-            children: [
-              const Text(
-                'Quiz',
-                style: TextStyle(
-                  fontFamily: 'OnboardFont2',
-                  fontSize: 24.0,
-                  color: Color(0xff494949),
-                ),
-              ),
-              SizedBox(
-                height: 3,
-                width: 200,
-                child: Container(
-                  color: quizClicked ? Colors.black : Colors.transparent,
-                ),
-              ),
-            ],
-          ),
-        ),
-        Positioned(
-          top: screenHeight * 0.12, // Adjust this value as needed
-          left: screenWidth * 0.1, // Adjust this value as needed
-          right: screenWidth * 0.1, // Adjust this value as needed
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            height: 50,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(25),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  spreadRadius: 1,
-                  blurRadius: 5,
-                  offset: const Offset(0, 3),
+                SizedBox(
+                  height: 3,
+                  width: 200,
+                  child: Container(
+                    color: quizClicked ? Colors.white : Colors.transparent,
+                  ),
                 ),
               ],
             ),
-            child: const Center(
-              child: Text(
-                'Unit 01:Basic Operations',
-                style: TextStyle(
-                  fontFamily: 'LoginPage1',
-                  fontSize: 20,
-                  color: Color(0xff494949),
-                  fontWeight: FontWeight.bold,
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              top: screenHeight * 0.05,
+              left: MediaQuery.of(context).size.width * 0.5,
+            ),
+            child: Column(
+              children: [
+                const Text(
+                  'Quiz',
+                  style: TextStyle(
+                    fontFamily: 'OnboardFont2',
+                    fontSize: 24.0,
+                    color: Color(0xff494949),
+                  ),
+                ),
+                SizedBox(
+                  height: 3,
+                  width: 200,
+                  child: Container(
+                    color: quizClicked ? Colors.black : Colors.transparent,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            top: screenHeight * 0.12,
+            left: screenWidth * 0.1,
+            right: screenWidth * 0.1,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              height: 50,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(25),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    spreadRadius: 1,
+                    blurRadius: 5,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: const Center(
+                child: Text(
+                  'Unit 01:Basic Operations',
+                  style: TextStyle(
+                    fontFamily: 'LoginPage1',
+                    fontSize: 22,
+                    color: Color(0xff494949),
+                    fontWeight: FontWeight.normal,
+                  ),
                 ),
               ),
             ),
           ),
-        ),
-        Positioned(
-          top: screenHeight * 0.2,
-          left: screenHeight * 0.13,
-          // child: Padding(
-          //   padding: const EdgeInsets.all(1.0),
-          child: Row(
-            children: [
-              // Slider widget wrapped in a SliderTheme
-              SliderTheme(
-                data: SliderTheme.of(context).copyWith(
-                  trackShape: const RectangularSliderTrackShape(),
-                  trackHeight: 6.0,
-                  thumbShape: SliderComponentShape.noThumb,
-                  overlayShape:
-                      const RoundSliderOverlayShape(overlayRadius: 16.0),
-                  overlayColor: Colors.black.withAlpha(32),
-                  activeTrackColor: Colors.yellow.withOpacity(0.7),
-                  inactiveTrackColor: Colors.white,
+          Positioned(
+            top: screenHeight * 0.2,
+            left: screenHeight * 0.13,
+            child: Row(
+              children: [
+                SliderTheme(
+                  data: SliderTheme.of(context).copyWith(
+                    trackShape: const RectangularSliderTrackShape(),
+                    trackHeight: 6.0,
+                    thumbShape: SliderComponentShape.noThumb,
+                    overlayShape:
+                        const RoundSliderOverlayShape(overlayRadius: 16.0),
+                    overlayColor: Colors.black.withAlpha(32),
+                    activeTrackColor: Colors.yellow.withOpacity(0.7),
+                    inactiveTrackColor: Colors.white,
+                  ),
+                  child: Slider(
+                    value: _basicOperationsValue,
+                    onChanged: (newValue) {
+                      setState(() {
+                        _basicOperationsValue = newValue;
+                      });
+                    },
+                  ),
                 ),
-                child: Slider(
-                  value: _basicOperationsValue,
-                  onChanged: (newValue) {
-                    setState(() {
-                      _basicOperationsValue = newValue;
-                    });
-                  },
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
-          // ),
-        ),
-        Positioned(
+          Positioned(
             top: screenHeight * 0.186,
             right: screenHeight * 0.12,
             child: Image.asset(
               'assets/king.png',
               height: 35,
               width: 35,
-            )),
-        Positioned(
-          top: screenHeight * 0.25,
-          left: screenWidth * 0.4,
-          child: GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const BasicOperations(),
-                ),
-              );
-            },
-            child: Container(
+            ),
+          ),
+          Positioned(
+            top: screenHeight * 0.24,
+            left: screenWidth * 0.4,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const BasicOperations(),
+                  ),
+                );
+              },
+              child: Container(
                 width: screenWidth * 0.20,
                 height: screenWidth * 0.20,
                 decoration: BoxDecoration(
-                    color: const Color(0XFFFDCFD7),
-                    shape: BoxShape.circle,
-                    border:
-                        Border.all(width: 3, color: const Color(0xff494949)),
-                    boxShadow: const [
-                      BoxShadow(
-                          color: Color(0xff494949), offset: Offset(6.0, 4.0)),
-                    ]),
+                  color: const Color(0XFFFDCFD7),
+                  shape: BoxShape.circle,
+                  border:
+                      Border.all(width: 3, color: const Color(0xff494949)),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0xff494949),
+                      offset: Offset(6.0, 4.0),
+                    ),
+                  ],
+                ),
                 child: const Center(
                   child: Text(
                     '01',
@@ -203,12 +216,15 @@ class _QuizScreenState extends State<QuizScreen> {
                       fontFamily: 'OnboardFont1',
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
+                      color: Color(0xff494949),
                     ),
                   ),
-                )),
+                ),
+              ),
+            ),
           ),
-        ),
-      ]),
+        ],
+      ),
       bottomNavigationBar: const SemiCircleCustomBar(),
     );
   }
