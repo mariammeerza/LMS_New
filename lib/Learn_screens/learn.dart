@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Home_Screens/customnavibar.dart';
 // import 'package:flutter_application_1/Home_Screens/navbar.dart';
 
-
 class Learn extends StatefulWidget {
   const Learn({Key? key}) : super(key: key);
 
@@ -86,6 +85,24 @@ class _LearnState extends State<Learn> {
               ),
             ),
           ),
+          Positioned(
+              top: screenHeight * 0.3,
+              left: screenWidth * 0.005,
+              child: Container(
+                width: screenHeight * 0.4,
+                height: screenHeight * 0.1,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(35),
+                  border: Border.all(width: 2, color: Colors.black),
+                  // boxShadow: const [
+                  //   BoxShadow(
+                  //     color: Color(0xFFFFCD83),
+                  //     offset: Offset(5.0, 6.0),
+                  //   ),
+                  // ],
+                ),
+              ))
         ],
       ),
       bottomNavigationBar: const SemiCircleCustomBar(),
