@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/English_Screens/english.dart';
 import 'package:flutter_application_1/Home_Screens/category_card.dart';
 import 'package:flutter_application_1/Home_Screens/customnavibar.dart';
-import 'package:flutter_application_1/Home_Screens/navbar.dart';
+// import 'package:flutter_application_1/Home_Screens/navbar.dart';
 import 'package:flutter_application_1/Maths_Screens/math.dart';
 import 'package:flutter_application_1/Non-Verbal_Screens/nonverbal.dart';
 import 'package:flutter_application_1/Quiz_Screens/quiz.dart';

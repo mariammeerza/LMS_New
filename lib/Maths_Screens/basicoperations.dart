@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_application_1/Maths_Screens/explanation.dart';
 
 class BasicOperations extends StatefulWidget {
   const BasicOperations({Key? key}) : super(key: key);
@@ -9,6 +12,29 @@ class BasicOperations extends StatefulWidget {
 }
 
 class _BasicOperationsState extends State<BasicOperations> {
+  String? selectedOption;
+  String correctOption = 'd'; // Correct option is 'd'
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    startTimer();
+  }
+
+  void startTimer() {
+    const duration = Duration(seconds: 20);
+    _timer = Timer(duration, () {
+      _showTimeUpDialog();
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -160,30 +186,283 @@ class _BasicOperationsState extends State<BasicOperations> {
                       ),
                     ),
                   ),
+                  // Option containers
                   Positioned(
-                      top: screenHeight * 0.2,
-                      left: screenHeight * 0.005,
-                      child: Container(
-                        width: screenHeight * 0.4,
-                        height: screenHeight * 0.1,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(35),
-                          border: Border.all(width: 2, color: Colors.black),
-                          // boxShadow: const [
-                          //   BoxShadow(
-                          //     color: Color(0xFFFFCD83),
-                          //     offset: Offset(5.0, 6.0),
-                          //   ),
-                          // ],
-                        ),
-                      ))
+                    top: screenHeight * 0.25,
+                    left: screenHeight * 0.001,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedOption = 'a';
+                          if (selectedOption != null) {
+                            _showResultDialog(selectedOption!);
+                          }
+                        });
+                      },
+                      child: buildOptionContainer(
+                        'a) 3 + 0.07',
+                        selectedOption == 'a',
+                        'a',
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: screenHeight * 0.35,
+                    left: screenHeight * 0.001,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedOption = 'b';
+                          if (selectedOption != null) {
+                            _showResultDialog(selectedOption!);
+                          }
+                        });
+                      },
+                      child: buildOptionContainer(
+                        'b) 9.2 - 3.67',
+                        selectedOption == 'b',
+                        'b',
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: screenHeight * 0.45,
+                    left: screenHeight * 0.001,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedOption = 'c';
+                          if (selectedOption != null) {
+                            _showResultDialog(selectedOption!);
+                          }
+                        });
+                      },
+                      child: buildOptionContainer(
+                        'c) 1.6 + 2 + 0.01',
+                        selectedOption == 'c',
+                        'c',
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: screenHeight * 0.55,
+                    left: screenHeight * 0.001,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedOption = 'd';
+                          if (selectedOption != null) {
+                            _showResultDialog(selectedOption!);
+                          }
+                        });
+                      },
+                      child: buildOptionContainer(
+                        'd) 2.4 + 1.3',
+                        selectedOption == 'd',
+                        'd',
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: screenHeight * 0.65,
+                    left: screenHeight * 0.001,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedOption = 'e';
+                          if (selectedOption != null) {
+                            _showResultDialog(selectedOption!);
+                          }
+                        });
+                      },
+                      child: buildOptionContainer(
+                        'e) 3.8 - 1',
+                        selectedOption == 'e',
+                        'e',
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget buildOptionContainer(String text, bool isSelected, String option) {
+    bool isCorrect = selectedOption == correctOption;
+    return Center(
+      child: Container(
+        width: MediaQuery.of(context).size.height * 0.37,
+        height: MediaQuery.of(context).size.height * 0.06,
+        decoration: BoxDecoration(
+          color: isSelected
+              ? (isCorrect ? Colors.green : Colors.red)
+              : Colors.white,
+          borderRadius: BorderRadius.circular(35),
+          border: Border.all(width: 2, color: Colors.black),
+        ),
+        child: Center(
+          child: Text(
+            text,
+            style: const TextStyle(
+              fontFamily: 'LoginPage1',
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _showResultDialog(String selectedOption) {
+    bool isCorrect = selectedOption == correctOption;
+    _timer.cancel();
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Column(
+            children: [
+              isCorrect
+                  ? Container(
+                      width: 60,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: const Color(0xFFCDE9C8),
+                        border: Border.all(
+                          width: 2,
+                          color: const Color(0xff494949),
+                        ),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Color(0xff494949),
+                            offset: Offset(2.0, 4.0),
+                          ),
+                        ],
+                      ),
+                      child: const Icon(
+                        Icons.check,
+                        color: Color(0xff494949),
+                        size: 40,
+                      ),
+                    )
+                  : Container(
+                      width: 60,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: const Color(0xFFFDCFD7),
+                        border: Border.all(
+                          width: 2,
+                          color: const Color(0xff494949),
+                        ),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Color(0xff494949),
+                            offset: Offset(2.0, 4.0),
+                          ),
+                        ],
+                      ),
+                      child: const Icon(
+                        Icons.close,
+                        color: Color(0xff494949),
+                        size: 40,
+                      ),
+                    ),
+              const SizedBox(height: 50),
+              isCorrect
+                  ? const Center(
+                      child: Text(
+                        'Correct!',
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont1',
+                          fontSize: 30,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                    )
+                  : const Text(
+                      'Incorrect!',
+                      style: TextStyle(
+                        fontFamily: 'OnboardFont1',
+                        fontSize: 30,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+            ],
+          ),
+          actions: <Widget>[
+            isCorrect
+                ? const Center(
+                    // child: TextButton(
+                    //   onPressed: () {
+                    //     Clipboard.setData(const ClipboardData(
+                    //         text:
+                    //             'Which of these calculations will yield 3.7?'));
+                    //     Navigator.of(context).pop();
+                    //     ScaffoldMessenger.of(context).showSnackBar(
+                    //       const SnackBar(
+                    //         content: Text('Question copied to clipboard'),
+                    //       ),
+                    //     );
+                    //   },
+                    //   child: const Icon(
+                    //     Icons.content_copy,
+                    //     size: 30,
+                    //   ),
+                    // ),
+                  )
+                : Center(
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ExplanationPage(
+                             selectedAnswer: selectedOption,
+                            ),
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        'View Explanation',
+                        style: TextStyle(
+                          fontFamily: 'OnboardFont1',
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
+                        ),
+                    ),
+                  ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showTimeUpDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Time\'s Up!'),
+          content: const Text(
+              'You ran out of time. The correct answer is: d) 2.4 + 1.3'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
