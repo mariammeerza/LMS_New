@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_application_1/Maths_Screens/basicoperations2.dart';
-import 'package:flutter_application_1/Maths_Screens/explanation.dart';
+import 'package:flutter_application_1/Maths_Screens/explanation2.dart';
 
-class BasicOperations extends StatefulWidget {
-  const BasicOperations({Key? key}) : super(key: key);
+class BasicOperations2 extends StatefulWidget {
+  const BasicOperations2({super.key});
 
   @override
-  State<BasicOperations> createState() => _BasicOperationsState();
+  State<BasicOperations2> createState() => _BasicOperations2State();
 }
 
-class _BasicOperationsState extends State<BasicOperations> {
-  String? selectedOption;
-  String correctOption = 'd'; // Correct option is 'd'
+class _BasicOperations2State extends State<BasicOperations2> {
+
+    String? selectedOption;
+  String correctOption = 'c'; // Correct option is 'c'
   late Timer _timer;
 
   @override
@@ -35,7 +34,6 @@ class _BasicOperationsState extends State<BasicOperations> {
     _timer.cancel();
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -166,7 +164,7 @@ class _BasicOperationsState extends State<BasicOperations> {
                         text: const TextSpan(
                           children: [
                             TextSpan(
-                              text: 'Q1:',
+                              text: 'Q4:',
                               style: TextStyle(
                                 fontFamily: 'OnboardFont1',
                                 fontSize: 20.0,
@@ -175,7 +173,7 @@ class _BasicOperationsState extends State<BasicOperations> {
                             ),
                             TextSpan(
                               text:
-                                  'Which of these calculations will yield 3.7?',
+                                  'Find the missing digit in the equation to the right. 42.19 – 22.?5 = 19.34',
                               style: TextStyle(
                                 fontFamily: 'OnboardFont1',
                                 fontSize: 20.0,
@@ -201,7 +199,7 @@ class _BasicOperationsState extends State<BasicOperations> {
                         });
                       },
                       child: buildOptionContainer(
-                        'a) 3 + 0.07',
+                        'a) 6',
                         selectedOption == 'a',
                         'a',
                       ),
@@ -220,7 +218,7 @@ class _BasicOperationsState extends State<BasicOperations> {
                         });
                       },
                       child: buildOptionContainer(
-                        'b) 9.2 - 3.67',
+                        'b) 7',
                         selectedOption == 'b',
                         'b',
                       ),
@@ -239,7 +237,7 @@ class _BasicOperationsState extends State<BasicOperations> {
                         });
                       },
                       child: buildOptionContainer(
-                        'c) 1.6 + 2 + 0.01',
+                        'c) 8',
                         selectedOption == 'c',
                         'c',
                       ),
@@ -258,7 +256,7 @@ class _BasicOperationsState extends State<BasicOperations> {
                         });
                       },
                       child: buildOptionContainer(
-                        'd) 2.4 + 1.3',
+                        'd) 9',
                         selectedOption == 'd',
                         'd',
                       ),
@@ -277,7 +275,7 @@ class _BasicOperationsState extends State<BasicOperations> {
                         });
                       },
                       child: buildOptionContainer(
-                        'e) 3.8 - 1',
+                        'e) 0',
                         selectedOption == 'e',
                         'e',
                       ),
@@ -459,7 +457,7 @@ class _BasicOperationsState extends State<BasicOperations> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ExplanationPage(
+                            builder: (context) => Explanation2(
                               selectedAnswer: selectedOption,
                             ),
                           ),
@@ -488,7 +486,7 @@ class _BasicOperationsState extends State<BasicOperations> {
         return AlertDialog(
           title: const Text('Time\'s Up!'),
           content: const Text(
-              'You ran out of time. The correct answer is: d) 2.4 + 1.3'),
+              'You ran out of time. The correct answer is: c) 11.27 and 10.73'),
           actions: <Widget>[
             TextButton(
               onPressed: () {

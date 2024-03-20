@@ -10,6 +10,7 @@ class VideoScreen extends StatefulWidget {
 
 class _VideoScreenState extends State<VideoScreen> {
   late VideoPlayerController _controller;
+  bool _isLoading=true;
 
 @override
 void initState() {
@@ -18,27 +19,30 @@ void initState() {
     'assets/videos/basic_operations.mp4',
   )..initialize().then((_) {
       // Ensure the first frame is shown after the video is initialized
-      setState(() {});
+      setState(() {
+        _isLoading=false;
+      });
     });
-  print("Controller initialized: $_controller");
+  // print("Controller initialized: $_controller");
 }
 
   @override
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
-      title: Text('Video Screen'),
+      title: const Text('Video Screen'),
     ),
     body: Center(
-      child: _controller.value.isInitialized
+      child: _isLoading
+      ? const CircularProgressIndicator()
+      : _controller.value.isInitialized
           ? AspectRatio(
               aspectRatio: _controller.value.aspectRatio,
               child: VideoPlayer(_controller),
             )
-          : CircularProgressIndicator(),
+          : Container(),
     ),
-    floatingActionButton: _controller.value.isInitialized
-        ? FloatingActionButton(
+    floatingActionButton: FloatingActionButton(
             onPressed: () {
               setState(() {
                 if (_controller.value.isPlaying) {
@@ -52,7 +56,14 @@ Widget build(BuildContext context) {
               _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
             ),
           )
-        : null,
   );
 }
+
+
+@override
+void dispose(){
+  super.dispose();
+  _controller.dispose();
 }
+}
+
