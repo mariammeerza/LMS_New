@@ -223,9 +223,99 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
             ),
           ),
+          Positioned(
+            top: screenHeight * 0.34,
+            left: screenWidth * 0.15,
+            child: GestureDetector(
+              onTap: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => const BasicOperations(),
+                //   ),
+                // );
+              },
+              child: Container(
+                width: screenWidth * 0.20,
+                height: screenWidth * 0.20,
+                decoration: BoxDecoration(
+                  color: const Color(0XFFFDCFD7),
+                  shape: BoxShape.circle,
+                  border:
+                      Border.all(width: 3, color: const Color(0xff494949)),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0xff494949),
+                      offset: Offset(6.0, 4.0),
+                    ),
+                  ],
+                ),
+                child: const Center(
+                  child: Text(
+                    '02',
+                    style: TextStyle(
+                      fontFamily: 'OnboardFont1',
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff494949),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: screenHeight * 0.42,
+            left: screenWidth * 0.43,
+            child: GestureDetector(
+              onTap: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => const BasicOperations(),
+                //   ),
+                // );
+              },
+              child: Container(
+                width: screenWidth * 0.20,
+                height: screenWidth * 0.20,
+                decoration: BoxDecoration(
+                  color: const Color(0XFFFDCFD7),
+                  shape: BoxShape.circle,
+                  border:
+                      Border.all(width: 3, color: const Color(0xff494949)),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0xff494949),
+                      offset: Offset(6.0, 4.0),
+                    ),
+                  ],
+                ),
+                child: const Center(
+                  child: Text(
+                    '03',
+                    style: TextStyle(
+                      fontFamily: 'OnboardFont1',
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff494949),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          // Positioned(
+          //   top: screenHeight * 0.26,
+          //   left: screenWidth * 0.07,
+          //   child: Image.asset(
+          //     'assets/cloud.png',
+          //     width: 400,
+          //     height: 400,
+          //     ))
         ],
       ),
-      bottomNavigationBar: const SemiCircleCustomBar(),
+      bottomNavigationBar: SemiCircleCustomBar(),
     );
   }
 }

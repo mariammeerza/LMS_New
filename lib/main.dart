@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/AI_Screens/ai_tutor.dart';
+import 'package:flutter_application_1/AI_Screens/aitutor_1.dart';
 import 'package:flutter_application_1/Connect_Screens/connect.dart';
 import 'package:flutter_application_1/Home_Screens/home_1.dart';
 import 'package:flutter_application_1/Learn_screens/learn.dart';
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home':(context)=>const HomePage(),
         '/learn':(context) => const Learn(),
-        '/ai_tutor':(context)=> const AITutor(),
+        '/ai_tutor':(context)=> const AItutor(),
         '/test':(context) => const TestScreen(),
         '/connect':(context) => const Connect(),
       },

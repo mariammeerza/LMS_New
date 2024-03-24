@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
+import 'package:flutter_application_1/Maths_Screens/basicoperations5.dart';
+import 'package:flutter_application_1/Maths_Screens/explanation.dart';
 import 'package:flutter_application_1/Maths_Screens/explanation2.dart';
+import 'package:flutter_application_1/Maths_Screens/explanation4.dart';
 
-class BasicOperations2 extends StatefulWidget {
-  const BasicOperations2({super.key});
+class BasicOperations4 extends StatefulWidget {
+  const BasicOperations4({super.key});
 
   @override
-  State<BasicOperations2> createState() => _BasicOperations2State();
+  State<BasicOperations4> createState() => _BasicOperations4State();
 }
 
-class _BasicOperations2State extends State<BasicOperations2> {
+class _BasicOperations4State extends State<BasicOperations4> {
 
     String? selectedOption;
   String correctOption = 'c'; // Correct option is 'c'
@@ -173,7 +176,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
                             ),
                             TextSpan(
                               text:
-                                  'Find the missing digit in the equation to the right. 42.19 – 22.?5 = 19.34',
+                                  'Find the missing digit in the equation to the right. 42.19 – 22.?5 = 19.34?',
                               style: TextStyle(
                                 fontFamily: 'OnboardFont1',
                                 fontSize: 20.0,
@@ -295,7 +298,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const BasicOperations2(),
+                      builder: (context) => const BasicOperations5(),
                     ),
                   );
                 },
@@ -457,7 +460,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Explanation2(
+                            builder: (context) => Explanation4(
                               selectedAnswer: selectedOption,
                             ),
                           ),

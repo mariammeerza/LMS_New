@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
-import 'package:flutter_application_1/Maths_Screens/basicoperations3.dart';
-import 'package:flutter_application_1/Maths_Screens/basicoperations4.dart';
+import 'package:flutter_application_1/Maths_Screens/basicoperations7.dart';
 import 'package:flutter_application_1/Maths_Screens/explanation2.dart';
+import 'package:flutter_application_1/Maths_Screens/explanation5.dart';
+import 'package:flutter_application_1/Maths_Screens/explanation6.dart';
 
-class BasicOperations2 extends StatefulWidget {
-  const BasicOperations2({super.key});
+class BasicOperations6 extends StatefulWidget {
+  const BasicOperations6({super.key});
 
   @override
-  State<BasicOperations2> createState() => _BasicOperations2State();
+  State<BasicOperations6> createState() => _BasicOperations6State();
 }
 
-class _BasicOperations2State extends State<BasicOperations2> {
+class _BasicOperations6State extends State<BasicOperations6> {
 
     String? selectedOption;
-  String correctOption = 'c'; // Correct option is 'c'
+  String correctOption = 'd'; // Correct option is 'c'
   late Timer _timer;
 
   @override
@@ -159,14 +160,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        bottom: screenHeight * 0.60,
+                        bottom: screenHeight * 0.53,
                         right: screenHeight * 0.05),
                     child: Center(
                       child: RichText(
                         text: const TextSpan(
                           children: [
                             TextSpan(
-                              text: 'Q2:',
+                              text: 'Q6:',
                               style: TextStyle(
                                 fontFamily: 'OnboardFont1',
                                 fontSize: 20.0,
@@ -175,7 +176,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
                             ),
                             TextSpan(
                               text:
-                                  'Which of these pair are equally distant from 11?',
+                                  'Aarti has £45 more than Joanna. If Aarti gave £7 to Joanna, how much more or less money will Aarti have than Joanna?',
                               style: TextStyle(
                                 fontFamily: 'OnboardFont1',
                                 fontSize: 20.0,
@@ -187,9 +188,21 @@ class _BasicOperations2State extends State<BasicOperations2> {
                       ),
                     ),
                   ),
+                  // Padding(
+                  //   padding: EdgeInsets.only(
+                  //       bottom: screenHeight * 0.28,
+                  //       right: screenHeight * 0.05),
+                  //       child: Center(
+                  //         child: Image.asset(
+                  //           'assets/shopping.png',
+                  //           width: 170,
+                  //           height: 170,
+                  //           ),
+                  //       ),
+                  // ),
                   // Option containers
                   Positioned(
-                    top: screenHeight * 0.2,
+                    top: screenHeight * 0.24,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -201,14 +214,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'a) 9.5 and 13.5',
+                        'a) £14 less',
                         selectedOption == 'a',
                         'a',
                       ),
                     ),
                   ),
                   Positioned(
-                    top: screenHeight * 0.3,
+                    top: screenHeight * 0.33,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -220,14 +233,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'b) 9.99 and 12.1',
+                        'b) £5 less',
                         selectedOption == 'b',
                         'b',
                       ),
                     ),
                   ),
                   Positioned(
-                    top: screenHeight * 0.4,
+                    top: screenHeight * 0.43,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -239,14 +252,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'c) 11.27 and 10.73',
+                        'c) £16 more',
                         selectedOption == 'c',
                         'c',
                       ),
                     ),
                   ),
                   Positioned(
-                    top: screenHeight * 0.5,
+                    top: screenHeight * 0.53,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -258,14 +271,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'd) 10.95 and 11.95',
+                        'd) £31 more',
                         selectedOption == 'd',
                         'd',
                       ),
                     ),
                   ),
                   Positioned(
-                    top: screenHeight * 0.6,
+                    top: screenHeight * 0.63,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -277,7 +290,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'e) 12.45 and 10.45',
+                        'e) £38 more',
                         selectedOption == 'e',
                         'e',
                       ),
@@ -297,14 +310,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const BasicOperations3(),
+                      builder: (context) => const BasicOperations7(),
                     ),
                   );
                 },
                 style: TextButton.styleFrom(
                   foregroundColor: const Color(0xff494949),
                   backgroundColor: Colors.yellow,
-                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  padding: const EdgeInsets.symmetric(vertical: 5),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40.0),
                     side:
@@ -459,7 +472,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Explanation2(
+                            builder: (context) => Explanation6(
                               selectedAnswer: selectedOption,
                             ),
                           ),

@@ -121,6 +121,19 @@ flutter:
     - assets/ai_icon.png
     - assets/home3.png
     - assets/videos/basic_operations.mp4
+    - assets/shopping.png
+    - assets/pyramid1.png
+    - assets/pyramid2.png
+    - assets/map.png
+    - assets/Owl.png
+    - assets/splash3.png
+    - assets/light.png
+    - assets/aitutor.png
+    - assets/spark.png
+    - assets/cloudsmall.png
+    - assets/cloud2nd.png
+    - assets/Bigcloud.png
+    - assets/aispark.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

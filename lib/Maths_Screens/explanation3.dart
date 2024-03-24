@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/Maths_Screens/basicoperations4.dart';
 
-class Explanation2 extends StatelessWidget {
+class Explanation3 extends StatelessWidget {
 
    final String selectedAnswer;
-  const Explanation2({required this.selectedAnswer});
+  const Explanation3({required this.selectedAnswer});
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +105,7 @@ class Explanation2 extends StatelessWidget {
                             text: const TextSpan(
                               children: [
                                 TextSpan(
-                                  text: 'Q2: ',
+                                  text: 'Q3: ',
                                   style: TextStyle(
                                     fontFamily: 'OnboardFont1',
                                     fontSize: 20.0,
@@ -113,7 +114,7 @@ class Explanation2 extends StatelessWidget {
                                 ),
                                 TextSpan(
                                   text:
-                                      'Which of these pair are equally distant from 11?',
+                                      'Which of calculations will give the biggest amount?',
                                   style: TextStyle(
                                     fontFamily: 'OnboardFont1',
                                     fontSize: 20.0,
@@ -140,7 +141,7 @@ class Explanation2 extends StatelessWidget {
                             Clipboard.setData(
                               const ClipboardData(
                                 text:
-                                    'Which of these pair are equally distant from 11?',
+                                    'Which of calculations will give the biggest amount?',
                               ),
                             );
                             ScaffoldMessenger.of(context).showSnackBar(
@@ -222,14 +223,14 @@ class Explanation2 extends StatelessWidget {
                           width: screenHeight * 0.38,
                           height: screenHeight * 0.05,
                           decoration: BoxDecoration(
-                            color: const Color(0xffFFF5A0),
+                            color: const Color(0xffB4D8AE),
                             border: Border.all(
                                 width: 2, color: const Color(0xFF494949)),
                             borderRadius: BorderRadius.circular(40),
                           ),
                           child: const Center(
                             child: Text(
-                              'c) 11.27 and 10.73',
+                              'c) - 12 + 14 – 8 + 16',
                               style: TextStyle(
                                   fontSize: 24, fontWeight: FontWeight.bold),
                             ),
@@ -244,31 +245,39 @@ class Explanation2 extends StatelessWidget {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                        const SizedBox(height: 10),
-                        const Text(
-                          'When you add 2.4 and 1.3, you get 3.7.',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'LoginPage1',
-                            fontWeight: FontWeight.normal,
+                        const SizedBox(height: 2),
+                        const Expanded(
+                          child: Text(
+                            'After evaluating all the given calculations, it\'s evident that option c) - 12 + 14 – 8 + 16 produces the highest value, totaling 10.This calculation adds positive numbers and subtracts negative numbers, resulting in the largest sum among the given choices. Hence, option c) is the correct answer for obtaining the biggest amount.',
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontFamily: 'LoginPage1',
+                              fontWeight: FontWeight.normal,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                   Positioned(
-                    bottom: screenHeight * 0.06,
+                    bottom: screenHeight * 0.01,
                     left: screenHeight * 0.025,
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width - 120,
                       child: TextButton(
                         onPressed: () {
+                           Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BasicOperations4(),
+                    ),
+                  );
                           // Add your continue button logic here
                         },
                         style: TextButton.styleFrom(
                           foregroundColor: const Color(0xff494949),
                           backgroundColor: Colors.yellow,
-                          padding: const EdgeInsets.symmetric(vertical: 15),
+                          padding: const EdgeInsets.symmetric(vertical: 5),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(40.0),
                             side: const BorderSide(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/Maths_Screens/basicoperations2.dart';
 
 class ExplanationPage extends StatelessWidget {
   final String selectedAnswer;
@@ -222,7 +223,7 @@ class ExplanationPage extends StatelessWidget {
                           width: screenHeight * 0.38,
                           height: screenHeight * 0.05,
                           decoration: BoxDecoration(
-                            color: const Color(0xffFFF5A0),
+                            color: const Color(0xffB4D8AE),
                             border: Border.all(
                                 width: 2, color: const Color(0xFF494949)),
                             borderRadius: BorderRadius.circular(40),
@@ -245,24 +246,32 @@ class ExplanationPage extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        const Text(
-                          'When you add 2.4 and 1.3, you get 3.7.',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'LoginPage1',
-                            fontWeight: FontWeight.normal,
+                        const Expanded(
+                          child: Text(
+                            'The calculation involves adding 2.4 and 1.3 together, resulting in 3.7. The sum of these two numbers meets the requirement of yielding 3.7. Therefore, option d) is the correct choice.',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontFamily: 'LoginPage1',
+                              fontWeight: FontWeight.normal,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                   Positioned(
-                    bottom: screenHeight * 0.06,
+                    bottom: screenHeight * 0.02,
                     left: screenHeight * 0.025,
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width - 120,
                       child: TextButton(
                         onPressed: () {
+                           Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BasicOperations2(),
+                    ),
+                  );
                           // Add your continue button logic here
                         },
                         style: TextButton.styleFrom(

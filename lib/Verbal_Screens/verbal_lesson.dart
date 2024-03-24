@@ -183,7 +183,7 @@ class _verbal_lessonsState extends State<verbal_lessons> {
           ],
         ),
       ),
-      bottomNavigationBar: const SemiCircleCustomBar(),
+      bottomNavigationBar:SemiCircleCustomBar(),
     );
   }
 }

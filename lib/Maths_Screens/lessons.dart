@@ -202,7 +202,7 @@ class _LessonsPageState extends State<LessonsPage> {
           ],
         ),
       ),
-      bottomNavigationBar: const SemiCircleCustomBar(),
+      bottomNavigationBar: SemiCircleCustomBar(),
     );
   }
 }

@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
-import 'package:flutter_application_1/Maths_Screens/basicoperations3.dart';
-import 'package:flutter_application_1/Maths_Screens/basicoperations4.dart';
-import 'package:flutter_application_1/Maths_Screens/explanation2.dart';
+import 'package:flutter_application_1/Maths_Screens/basicoperations8.dart';
+import 'package:flutter_application_1/Maths_Screens/explanation7.dart';
 
-class BasicOperations2 extends StatefulWidget {
-  const BasicOperations2({super.key});
+class BasicOperations7 extends StatefulWidget {
+  const BasicOperations7({super.key});
 
   @override
-  State<BasicOperations2> createState() => _BasicOperations2State();
+  State<BasicOperations7> createState() => _BasicOperations7State();
 }
 
-class _BasicOperations2State extends State<BasicOperations2> {
+class _BasicOperations7State extends State<BasicOperations7> {
 
     String? selectedOption;
-  String correctOption = 'c'; // Correct option is 'c'
+  String correctOption = 'b'; 
   late Timer _timer;
 
   @override
@@ -159,14 +158,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        bottom: screenHeight * 0.60,
+                        bottom: screenHeight * 0.53,
                         right: screenHeight * 0.05),
                     child: Center(
                       child: RichText(
                         text: const TextSpan(
                           children: [
                             TextSpan(
-                              text: 'Q2:',
+                              text: 'Q7:',
                               style: TextStyle(
                                 fontFamily: 'OnboardFont1',
                                 fontSize: 20.0,
@@ -175,7 +174,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
                             ),
                             TextSpan(
                               text:
-                                  'Which of these pair are equally distant from 11?',
+                                  'Two prime numbers add up to 12, which statement is true:',
                               style: TextStyle(
                                 fontFamily: 'OnboardFont1',
                                 fontSize: 20.0,
@@ -187,9 +186,21 @@ class _BasicOperations2State extends State<BasicOperations2> {
                       ),
                     ),
                   ),
+                  // Padding(
+                  //   padding: EdgeInsets.only(
+                  //       bottom: screenHeight * 0.28,
+                  //       right: screenHeight * 0.05),
+                  //       child: Center(
+                  //         child: Image.asset(
+                  //           'assets/shopping.png',
+                  //           width: 170,
+                  //           height: 170,
+                  //           ),
+                  //       ),
+                  // ),
                   // Option containers
                   Positioned(
-                    top: screenHeight * 0.2,
+                    top: screenHeight * 0.24,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -201,14 +212,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'a) 9.5 and 13.5',
+                        'a) One of the numbers must be less than 5',
                         selectedOption == 'a',
                         'a',
                       ),
                     ),
                   ),
                   Positioned(
-                    top: screenHeight * 0.3,
+                    top: screenHeight * 0.33,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -220,14 +231,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'b) 9.99 and 12.1',
+                        'b) Product of the two prime numbers must be 35',
                         selectedOption == 'b',
                         'b',
                       ),
                     ),
                   ),
                   Positioned(
-                    top: screenHeight * 0.4,
+                    top: screenHeight * 0.43,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -239,14 +250,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'c) 11.27 and 10.73',
+                        'c) One of the numbers could be more than 10',
                         selectedOption == 'c',
                         'c',
                       ),
                     ),
                   ),
                   Positioned(
-                    top: screenHeight * 0.5,
+                    top: screenHeight * 0.53,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -258,14 +269,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'd) 10.95 and 11.95',
+                        'd) Difference of the two prime numbers must be 10',
                         selectedOption == 'd',
                         'd',
                       ),
                     ),
                   ),
                   Positioned(
-                    top: screenHeight * 0.6,
+                    top: screenHeight * 0.63,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -277,7 +288,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'e) 12.45 and 10.45',
+                        'e) None of the above',
                         selectedOption == 'e',
                         'e',
                       ),
@@ -297,14 +308,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const BasicOperations3(),
+                      builder: (context) => const BasicOperations8(),
                     ),
                   );
                 },
                 style: TextButton.styleFrom(
                   foregroundColor: const Color(0xff494949),
                   backgroundColor: Colors.yellow,
-                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  padding: const EdgeInsets.symmetric(vertical: 5),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40.0),
                     side:
@@ -328,31 +339,35 @@ class _BasicOperations2State extends State<BasicOperations2> {
   }
 
   Widget buildOptionContainer(String text, bool isSelected, String option) {
-    bool isCorrect = selectedOption == correctOption;
-    return Center(
-      child: Container(
-        width: MediaQuery.of(context).size.height * 0.37,
-        height: MediaQuery.of(context).size.height * 0.06,
-        decoration: BoxDecoration(
-          color: isSelected
-              ? (isCorrect ? Colors.green : Colors.red)
-              : Colors.white,
-          borderRadius: BorderRadius.circular(35),
-          border: Border.all(width: 2, color: Colors.black),
-        ),
-        child: Center(
+  bool isCorrect = selectedOption == correctOption;
+  return Center(
+    child: Container(
+      width: MediaQuery.of(context).size.height * 0.37,
+      height: MediaQuery.of(context).size.height * 0.06,
+      decoration: BoxDecoration(
+        color: isSelected
+            ? (isCorrect ? Colors.green : Colors.red)
+            : Colors.white,
+        borderRadius: BorderRadius.circular(35),
+        border: Border.all(width: 2, color: Colors.black),
+      ),
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0), // Add padding to adjust text within container
           child: Text(
             text,
+            textAlign: TextAlign.center, // Align text within the container
             style: const TextStyle(
               fontFamily: 'LoginPage1',
-              fontSize: 20,
+              fontSize: 17,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   void _showResultDialog(String selectedOption) {
     bool isCorrect = selectedOption == correctOption;
@@ -459,7 +474,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Explanation2(
+                            builder: (context) => Explanation7(
                               selectedAnswer: selectedOption,
                             ),
                           ),

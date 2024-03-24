@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/Maths_Screens/basicoperations3.dart';
 
 class Explanation2 extends StatelessWidget {
   final String selectedAnswer;
@@ -221,7 +222,7 @@ class Explanation2 extends StatelessWidget {
                           width: screenHeight * 0.38,
                           height: screenHeight * 0.05,
                           decoration: BoxDecoration(
-                            color: const Color(0xffFFF5A0),
+                            color: const Color(0xffB4D8AE),
                             border: Border.all(
                                 width: 2, color: const Color(0xFF494949)),
                             borderRadius: BorderRadius.circular(40),
@@ -243,29 +244,12 @@ class Explanation2 extends StatelessWidget {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 2),
                         const Expanded(
                           child: Text(
-                            'To determine which pair of numbers are equally distant from 11, we need to calculate the absolute differences between each number in the pair and 11. The pair with the same absolute difference will be equally distant from 11. Let\'s calculate the absolute differences\n\n'
-                            'For pair (9.5, 13.5):\n'
-                            '  Absolute difference between 9.5 and 11 |9.5 - 11| = 1.5\n'
-                            '  Absolute difference between 13.5 and 11 |13.5 - 11| = 2.5\n\n'
-                            'For pair (9.99, 12.1):\n'
-                            '  Absolute difference between 9.99 and 11: |9.99 - 11| = 1.01\n'
-                            '  Absolute difference between 12.1 and 11: |12.1 - 11| = 1.1\n\n'
-                            'For pair (11.27, 10.73):\n'
-                            '  Absolute difference between 11.27 and 11: |11.27 - 11| = 0.27\n'
-                            '  Absolute difference between 10.73 and 11: |10.73 - 11| = 0.27\n\n'
-                            'For pair (10.95, 11.95):\n'
-                            '  Absolute difference between 10.95 and 11: |10.95 - 11| = 0.05\n'
-                            '  Absolute difference between 11.95 and 11: |11.95 - 11| = 0.95\n\n'
-                            'For pair (12.45, 10.45):\n'
-                            '  Absolute difference between 12.45 and 11: |12.45 - 11| = 1.45\n'
-                            '  Absolute difference between 10.45 and 11: |10.45 - 11| = 0.55\n\n'
-                            'Based on the calculations, we can see that the pair (11.27, 10.73) has the same absolute difference from 11, which is approximately 0.27. So, the answer is:\n\n'
-                            'c. 11.27 and 10.73',
+                            'Among the given pairs of numbers, the pair (11.27, 10.73) is equally distant from 11. The absolute difference between 11.27 and 11 is 0.27, and the absolute difference between 10.73 and 11 is also 0.27. This means that both numbers in this pair are the same distance away from 11. Therefore, the correct answer is c) 11.27 and 10.73.',
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 17.5,
                               fontFamily: 'LoginPage1',
                               fontWeight: FontWeight.normal,
                             ),
@@ -276,11 +260,17 @@ class Explanation2 extends StatelessWidget {
                   ),
                   Positioned(
                     bottom: screenHeight * 0.01,
-                    left: screenHeight * 0.15,
+                    left: screenHeight * 0.07,
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width - 200,
                       child: TextButton(
                         onPressed: () {
+                          Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BasicOperations3(),
+                    ),
+                  );
                           // Add your continue button logic here
                         },
                         style: TextButton.styleFrom(

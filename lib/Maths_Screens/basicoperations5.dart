@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
-import 'package:flutter_application_1/Maths_Screens/basicoperations3.dart';
-import 'package:flutter_application_1/Maths_Screens/basicoperations4.dart';
+import 'package:flutter_application_1/Maths_Screens/basicoperations6.dart';
 import 'package:flutter_application_1/Maths_Screens/explanation2.dart';
+import 'package:flutter_application_1/Maths_Screens/explanation5.dart';
 
-class BasicOperations2 extends StatefulWidget {
-  const BasicOperations2({super.key});
+class BasicOperations5 extends StatefulWidget {
+  const BasicOperations5({super.key});
 
   @override
-  State<BasicOperations2> createState() => _BasicOperations2State();
+  State<BasicOperations5> createState() => _BasicOperations5State();
 }
 
-class _BasicOperations2State extends State<BasicOperations2> {
+class _BasicOperations5State extends State<BasicOperations5> {
 
     String? selectedOption;
-  String correctOption = 'c'; // Correct option is 'c'
+  String correctOption = 'a'; // Correct option is 'c'
   late Timer _timer;
 
   @override
@@ -159,14 +159,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                        bottom: screenHeight * 0.60,
+                        bottom: screenHeight * 0.55,
                         right: screenHeight * 0.05),
                     child: Center(
                       child: RichText(
                         text: const TextSpan(
                           children: [
                             TextSpan(
-                              text: 'Q2:',
+                              text: 'Q5:',
                               style: TextStyle(
                                 fontFamily: 'OnboardFont1',
                                 fontSize: 20.0,
@@ -175,10 +175,10 @@ class _BasicOperations2State extends State<BasicOperations2> {
                             ),
                             TextSpan(
                               text:
-                                  'Which of these pair are equally distant from 11?',
+                                  'John goes to the supermarket and buys three cartons of milk, one bread, a pack of cheese and two packets of rice. How much change should he expect, if he hands in a £20 note.',
                               style: TextStyle(
                                 fontFamily: 'OnboardFont1',
-                                fontSize: 20.0,
+                                fontSize: 16.0,
                                 color: Color(0xFF494949),
                               ),
                             ),
@@ -187,9 +187,21 @@ class _BasicOperations2State extends State<BasicOperations2> {
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                        bottom: screenHeight * 0.28,
+                        right: screenHeight * 0.05),
+                        child: Center(
+                          child: Image.asset(
+                            'assets/shopping.png',
+                            width: 170,
+                            height: 170,
+                            ),
+                        ),
+                  ),
                   // Option containers
                   Positioned(
-                    top: screenHeight * 0.2,
+                    top: screenHeight * 0.34,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -201,14 +213,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'a) 9.5 and 13.5',
+                        'a) £3.35',
                         selectedOption == 'a',
                         'a',
                       ),
                     ),
                   ),
                   Positioned(
-                    top: screenHeight * 0.3,
+                    top: screenHeight * 0.42,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -220,14 +232,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'b) 9.99 and 12.1',
+                        'b) £3.45',
                         selectedOption == 'b',
                         'b',
                       ),
                     ),
                   ),
                   Positioned(
-                    top: screenHeight * 0.4,
+                    top: screenHeight * 0.5,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -239,14 +251,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'c) 11.27 and 10.73',
+                        'c) £3.85',
                         selectedOption == 'c',
                         'c',
                       ),
                     ),
                   ),
                   Positioned(
-                    top: screenHeight * 0.5,
+                    top: screenHeight * 0.58,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -258,14 +270,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'd) 10.95 and 11.95',
+                        'd) £4.15',
                         selectedOption == 'd',
                         'd',
                       ),
                     ),
                   ),
                   Positioned(
-                    top: screenHeight * 0.6,
+                    top: screenHeight * 0.66,
                     left: screenHeight * 0.001,
                     child: GestureDetector(
                       onTap: () {
@@ -277,7 +289,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         });
                       },
                       child: buildOptionContainer(
-                        'e) 12.45 and 10.45',
+                        'e) £4.45',
                         selectedOption == 'e',
                         'e',
                       ),
@@ -288,7 +300,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
             ),
           ),
           Positioned(
-            bottom: screenHeight * 0.02,
+            bottom: screenHeight * 0.01,
             left: screenHeight * 0.15,
             child: SizedBox(
               width: MediaQuery.of(context).size.width - 250,
@@ -297,14 +309,14 @@ class _BasicOperations2State extends State<BasicOperations2> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const BasicOperations3(),
+                      builder: (context) => const BasicOperations6(),
                     ),
                   );
                 },
                 style: TextButton.styleFrom(
                   foregroundColor: const Color(0xff494949),
                   backgroundColor: Colors.yellow,
-                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  padding: const EdgeInsets.symmetric(vertical: 5),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40.0),
                     side:
@@ -459,7 +471,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Explanation2(
+                            builder: (context) => Explanation5(
                               selectedAnswer: selectedOption,
                             ),
                           ),

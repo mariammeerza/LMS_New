@@ -105,7 +105,7 @@ class _LearnState extends State<Learn> {
               ))
         ],
       ),
-      bottomNavigationBar: const SemiCircleCustomBar(),
+      bottomNavigationBar: SemiCircleCustomBar(),
     );
   }
 }

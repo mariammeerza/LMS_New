@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
+import 'package:flutter_application_1/Maths_Screens/basicoperations4.dart';
 import 'package:flutter_application_1/Maths_Screens/explanation2.dart';
+import 'package:flutter_application_1/Maths_Screens/explanation3.dart';
 
-class BasicOperations2 extends StatefulWidget {
-  const BasicOperations2({super.key});
+class BasicOperations3 extends StatefulWidget {
+  const BasicOperations3({super.key});
 
   @override
-  State<BasicOperations2> createState() => _BasicOperations2State();
+  State<BasicOperations3> createState() => _BasicOperations3State();
 }
 
-class _BasicOperations2State extends State<BasicOperations2> {
+class _BasicOperations3State extends State<BasicOperations3> {
 
     String? selectedOption;
   String correctOption = 'c'; // Correct option is 'c'
@@ -295,7 +297,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const BasicOperations2(),
+                      builder: (context) => const BasicOperations4(),
                     ),
                   );
                 },
@@ -457,7 +459,7 @@ class _BasicOperations2State extends State<BasicOperations2> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Explanation2(
+                            builder: (context) => Explanation3(
                               selectedAnswer: selectedOption,
                             ),
                           ),

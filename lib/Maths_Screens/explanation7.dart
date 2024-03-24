@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/Maths_Screens/basicoperations5.dart';
+import 'package:flutter_application_1/Maths_Screens/basicoperations8.dart';
 
-class Explanation4 extends StatelessWidget {
+class Explanation7 extends StatelessWidget {
   final String selectedAnswer;
 
-  const Explanation4({required this.selectedAnswer});
+  const Explanation7({required this.selectedAnswer});
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +96,7 @@ class Explanation4 extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: screenHeight * 0.07,
+                      top: screenHeight * 0.08,
                       left: screenHeight * 0.001,
                     ),
                     child: Row(
@@ -105,7 +106,7 @@ class Explanation4 extends StatelessWidget {
                             text: const TextSpan(
                               children: [
                                 TextSpan(
-                                  text: 'Q4: ',
+                                  text: 'Q7: ',
                                   style: TextStyle(
                                     fontFamily: 'OnboardFont1',
                                     fontSize: 20.0,
@@ -114,7 +115,7 @@ class Explanation4 extends StatelessWidget {
                                 ),
                                 TextSpan(
                                   text:
-                                      'Find the missing digit in the equation to the right. 42.19 – 22.?5 = 19.34',
+                                      'Two prime numbers add up to 12, which statement is true:',
                                   style: TextStyle(
                                     fontFamily: 'OnboardFont1',
                                     fontSize: 20.0,
@@ -130,7 +131,7 @@ class Explanation4 extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: screenHeight * 0.14,
+                      top: screenHeight * 0.13,
                       left: screenHeight * 0.0005,
                     ),
                     child: Row(
@@ -141,7 +142,7 @@ class Explanation4 extends StatelessWidget {
                             Clipboard.setData(
                               const ClipboardData(
                                 text:
-                                    'Find the missing digit in the equation to the right. 42.19 – 22.?5 = 19.34',
+                                    'Two prime numbers add up to 12, which statement is true:',
                               ),
                             );
                             ScaffoldMessenger.of(context).showSnackBar(
@@ -221,7 +222,7 @@ class Explanation4 extends StatelessWidget {
                         const SizedBox(height: 10),
                         Container(
                           width: screenHeight * 0.38,
-                          height: screenHeight * 0.05,
+                          height: screenHeight * 0.06,
                           decoration: BoxDecoration(
                             color: const Color(0xffB4D8AE),
                             border: Border.all(
@@ -230,13 +231,15 @@ class Explanation4 extends StatelessWidget {
                           ),
                           child: const Center(
                             child: Text(
-                              'c) 8',
+                              
+                              'b) Product of the two prime numbers must be 35',
+                                textAlign: TextAlign.center,
                               style: TextStyle(
-                                  fontSize: 24, fontWeight: FontWeight.bold),
+                                  fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 13),
                         const Text(
                           'Explanation:',
                           style: TextStyle(
@@ -245,12 +248,12 @@ class Explanation4 extends StatelessWidget {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 0),
                         const Expanded(
                           child: Text(
-                            'To find the missing digit in 42.19−22.?5=19.34, we subtract 19.34 from 42.19, which equals 22.85. Since the last digit in 22.?5 needs to be subtracted from 22.85 to get 0.50, the missing digit must be 8. Therefore, the correct answer is option c) ',
+                            'The correct statement, "Product of the two prime numbers must be 35," simply highlights that the only pair of prime numbers that sum up to 12 are 5 and 7, whose product is indeed 35. This succinctly demonstrates the validity of the statement by directly connecting the prime numbers\' properties to their multiplication result. ',
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 17,
                               fontFamily: 'LoginPage1',
                               fontWeight: FontWeight.normal,
                             ),
@@ -260,7 +263,7 @@ class Explanation4 extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: screenHeight * 0.02,
+                    bottom: screenHeight * 0.012,
                     left: screenHeight * 0.025,
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width - 120,
@@ -269,7 +272,7 @@ class Explanation4 extends StatelessWidget {
                            Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const BasicOperations5()
+                      builder: (context) => const BasicOperations8()
                     )
                            );
                           // Add your continue button logic here
