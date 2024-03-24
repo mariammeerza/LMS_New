@@ -549,7 +549,7 @@ class _aitutor_chatState extends State<aitutor_chat> {
           ],
         ),
         endDrawer: const Sidebar(),
-        bottomNavigationBar: const SemiCircleCustomBar());
+        bottomNavigationBar: SemiCircleCustomBar());
   }
 }
 

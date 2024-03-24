@@ -26,59 +26,58 @@ class _AIChatScreenState extends State<AIChatScreen> {
     messages.add({"type": "prompt", "text": widget.promptText});
   }
 
-  void _sendMessage() async {
-    String message = _controller.text;
-    if (message.isNotEmpty) {
-      setState(() {
-        messages.add({"type": "user", "text": message});
-        _controller.clear();
-      });
+void _sendMessage() async {
+  String prompt = _controller.text;
+  if (prompt.isNotEmpty) {
+    setState(() {
+      messages.add({"type": "prompt", "text": prompt});
+      _controller.clear();
+    });
 
-      final response = await http.get(
-        Uri.parse('http://10.0.2.2:5000/query?query=$message'),
-        headers: {'Content-Type': 'application/json'},
-      );
+    final response = await http.get(
+      Uri.parse('http://10.0.2.2:5000/query?query=$prompt'),
+      headers: {'Content-Type': 'application/json'},
+    );
 
-      if (response.statusCode == 200) {
-        final responseData = json.decode(response.body);
-        if (responseData.containsKey('response')) {
-          setState(() {
-            messages.add({"type": "ai", "text": responseData['response']});
-          });
-        } else {
-          print("The API response does not contain the key 'response'.");
-        }
+    if (response.statusCode == 200) {
+      final responseData = json.decode(response.body);
+      if (responseData.containsKey('response')) {
+        setState(() {
+          messages.add({"type": "ai", "text": responseData['response']});
+        });
       } else {
-        print("Error: ${response.body}");
+        print("The API response does not contain the key 'response'.");
       }
+    } else {
+      print("Error: ${response.body}");
     }
   }
+}
 
   Widget _buildMessageBubble(Map<String, String> message) {
-    bool isUserMessage = message['type'] == 'user';
-    return Align(
-      alignment: isUserMessage ? Alignment.centerRight : Alignment.centerLeft,
-      child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-        decoration: BoxDecoration(
-            color: isUserMessage
-                ? Color.fromARGB(255, 255, 255, 255)
-                : const Color.fromARGB(255, 180, 216, 174),
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: Colors.black, width: 2)),
-        child: Text(
-          message['text']!,
-          style: TextStyle(
-            fontSize: 17,
-            color: isUserMessage
-                ? const Color.fromARGB(255, 0, 0, 0)
-                : Colors.black,
-          ),
+  bool isPrompt = message['type'] == 'prompt';
+  return Align(
+    alignment: isPrompt ? Alignment.centerRight : Alignment.centerRight,
+    child: Container(
+      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+      decoration: BoxDecoration(
+          color: isPrompt
+              ? Color.fromARGB(255, 255, 255, 255)
+              : Color.fromARGB(255, 255, 255, 255),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.black, width: 2)),
+      child: Text(
+        message['text']!,
+        style: TextStyle(
+          fontSize: 17,
+          color: isPrompt ? Colors.black : Colors.black,
         ),
       ),
-    );
-  }
+    ),
+  );
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -228,7 +227,7 @@ class _AIChatScreenState extends State<AIChatScreen> {
         ],
       ),
       endDrawer: const Sidebar(),
-      bottomNavigationBar: const SemiCircleCustomBar(),
+      bottomNavigationBar: SemiCircleCustomBar(),
       // bottomSheet: _buildInputField(context, _sendMessageAndNavigate),
     );
   }

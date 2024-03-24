@@ -283,7 +283,7 @@ class _AItutorState extends State<AItutor> {
           ],
         ),
         endDrawer: const Sidebar(),
-        bottomNavigationBar: const SemiCircleCustomBar()
+        bottomNavigationBar: SemiCircleCustomBar()
         );
   }
 }
