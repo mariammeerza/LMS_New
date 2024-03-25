@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/Home_Screens/customnavibar.dart';
 import 'package:flutter_application_1/Maths_Screens/basicoperations5.dart';
 import 'package:flutter_application_1/Maths_Screens/basicoperations8.dart';
 
@@ -96,7 +97,7 @@ class Explanation7 extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: screenHeight * 0.08,
+                      top: screenHeight * 0.05,
                       left: screenHeight * 0.001,
                     ),
                     child: Row(
@@ -131,7 +132,7 @@ class Explanation7 extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: screenHeight * 0.13,
+                      top: screenHeight * 0.1,
                       left: screenHeight * 0.0005,
                     ),
                     child: Row(
@@ -171,7 +172,7 @@ class Explanation7 extends StatelessWidget {
                   const SizedBox(height: 10),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: screenHeight * 0.23,
+                      top: screenHeight * 0.16,
                     ),
                     child: Container(
                       width: screenHeight * 0.38,
@@ -195,7 +196,7 @@ class Explanation7 extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 280),
+                    padding: const EdgeInsets.symmetric(vertical: 190),
                     child: Divider(
                       color: Colors.black,
                       thickness: 2,
@@ -205,7 +206,7 @@ class Explanation7 extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: screenHeight * 0.35,
+                      top: screenHeight * 0.23,
                       left: screenHeight * 0.01,
                     ),
                     child: Column(
@@ -263,7 +264,7 @@ class Explanation7 extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: screenHeight * 0.012,
+                    bottom: screenHeight * 0.06,
                     left: screenHeight * 0.025,
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width - 120,
@@ -304,6 +305,7 @@ class Explanation7 extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: SemiCircleCustomBar(),
     );
   }
 }

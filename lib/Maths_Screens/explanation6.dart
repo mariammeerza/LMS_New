@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/Home_Screens/customnavibar.dart';
 import 'package:flutter_application_1/Maths_Screens/basicoperations5.dart';
 import 'package:flutter_application_1/Maths_Screens/basicoperations7.dart';
 
@@ -261,7 +262,7 @@ class Explanation6 extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: screenHeight * 0.012,
+                    bottom: screenHeight * 0.1,
                     left: screenHeight * 0.025,
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width - 120,
@@ -302,6 +303,7 @@ class Explanation6 extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: SemiCircleCustomBar(),
     );
   }
 }

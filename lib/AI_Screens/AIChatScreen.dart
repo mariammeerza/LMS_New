@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/AI_Screens/aitutor_chat1.dart';
 import 'package:flutter_application_1/Home_Screens/customnavibar.dart';
-import 'package:flutter_application_1/Login_Screens/login.dart';
 import 'package:flutter_application_1/Sidebar_AITutor/sidebarai.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
@@ -57,7 +56,7 @@ void _sendMessage() async {
   Widget _buildMessageBubble(Map<String, String> message) {
   bool isPrompt = message['type'] == 'prompt';
   return Align(
-    alignment: isPrompt ? Alignment.centerRight : Alignment.centerRight,
+    alignment: isPrompt ? Alignment.centerRight : Alignment.centerLeft,
     child: Container(
       margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),

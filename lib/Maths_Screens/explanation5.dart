@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/Home_Screens/customnavibar.dart';
 import 'package:flutter_application_1/Maths_Screens/basicoperations5.dart';
 import 'package:flutter_application_1/Maths_Screens/basicoperations6.dart';
 
@@ -171,7 +172,7 @@ class Explanation5 extends StatelessWidget {
                   const SizedBox(height: 10),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: screenHeight * 0.23,
+                      top: screenHeight * 0.21,
                     ),
                     child: Container(
                       width: screenHeight * 0.38,
@@ -195,7 +196,7 @@ class Explanation5 extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 280),
+                    padding: const EdgeInsets.symmetric(vertical: 240),
                     child: Divider(
                       color: Colors.black,
                       thickness: 2,
@@ -205,7 +206,7 @@ class Explanation5 extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: screenHeight * 0.35,
+                      top: screenHeight * 0.28,
                       left: screenHeight * 0.01,
                     ),
                     child: Column(
@@ -249,7 +250,7 @@ class Explanation5 extends StatelessWidget {
                         const SizedBox(height: 0),
                         const Expanded(
                           child: Text(
-                            'To find John\'s change, we subtract the total cost of £11.00 from the amount he paid (£20.00). This gives us £9.00.So, to identify the correct change, we must recalculate. Given the prices of the items, we can determine that the nearest amount to £9.00 is £3.35, which is option a). Therefore, John should expect £3.35 in change.',
+                            'To find John\'s change, we subtract the total cost of £11.00 from the amount he paid (£20.00). This gives us £9.00.So, to identify the correct change, we must recalculate. Given the prices of the items, we can determine that the nearest amount to £9.00 is £3.35, which is option a). ',
                             style: TextStyle(
                               fontSize: 17,
                               fontFamily: 'LoginPage1',
@@ -261,7 +262,7 @@ class Explanation5 extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: screenHeight * 0.012,
+                    bottom: screenHeight * 0.05,
                     left: screenHeight * 0.025,
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width - 120,
@@ -302,6 +303,7 @@ class Explanation5 extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: SemiCircleCustomBar(),
     );
   }
 }
