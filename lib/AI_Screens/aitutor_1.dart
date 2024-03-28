@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/AI_Screens/AIChatScreen.dart';
 import 'package:flutter_application_1/AI_Screens/aitutor_chat1.dart';
 import 'package:flutter_application_1/Home_Screens/customnavibar.dart';
 import 'package:flutter_application_1/Home_Screens/home_1.dart';
@@ -243,7 +244,7 @@ class _AItutorState extends State<AItutor> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const aitutor_chat(),
+                        builder: (context) => const AIChatScreen(),
                       ),
                     );
                     // Add your login functionality here

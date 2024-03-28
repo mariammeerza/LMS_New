@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/AI_Screens/aitutor_1.dart';
 import 'package:flutter_application_1/AI_Screens/aitutor_chat1.dart';
 import 'package:flutter_application_1/Home_Screens/customnavibar.dart';
 import 'package:flutter_application_1/Sidebar_AITutor/sidebarai.dart';
@@ -120,7 +121,7 @@ Widget build(BuildContext context) {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const aitutor_chat()),
+                            builder: (context) => const AItutor()),
                       );
                     },
                   ),
