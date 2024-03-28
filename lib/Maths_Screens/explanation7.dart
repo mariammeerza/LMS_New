@@ -305,7 +305,7 @@ class Explanation7 extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: SemiCircleCustomBar(),
+      bottomNavigationBar: const SemiCircleCustomBar(),
     );
   }
 }

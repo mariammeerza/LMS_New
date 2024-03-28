@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/AI_Screens/AIChatScreen.dart';
-import 'package:flutter_application_1/AI_Screens/aitutor_1.dart';
 import 'package:flutter_application_1/Home_Screens/customnavibar.dart';
 import 'package:flutter_application_1/Login_Screens/login.dart';
 import 'package:flutter_application_1/Sidebar_AITutor/sidebarai.dart';
@@ -14,20 +13,6 @@ class aitutor_chat extends StatefulWidget {
 
 class _aitutor_chatState extends State<aitutor_chat> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  late TextEditingController messageController;
-
-  void initState() {
-    super.initState();
-    messageController = TextEditingController(); // Initialize messageController
-  }
-
-  @override
-  void dispose() {
-    // Dispose the controller when not needed to prevent memory leaks
-    messageController.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -116,7 +101,7 @@ class _aitutor_chatState extends State<aitutor_chat> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const AItutor()),
+                              builder: (context) => const Login()),
                         );
                       },
                     ),
@@ -128,11 +113,11 @@ class _aitutor_chatState extends State<aitutor_chat> {
                       icon: const Icon(Icons.volume_up_outlined,
                           size: 28, color: Color.fromARGB(158, 0, 0, 0)),
                       onPressed: () {
-                        // Navigator.pushReplacement(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => const Login()),
-                        // );
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Login()),
+                        );
                       },
                     ),
                   ),
@@ -237,249 +222,16 @@ class _aitutor_chatState extends State<aitutor_chat> {
                       icon: const Icon(Icons.send,
                           color: Color.fromARGB(255, 0, 0, 0)),
                       onPressed: () {
-                        Navigator.push(
+                        // Implement send functionality
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const AIChatScreen(
-                              promptText: "Message",
-                              // messageText: messageController
-                              //     .text, // Pass the entered message
-                            ),
+                            builder: (context) => AIChatScreen(),
                           ),
                         );
                       },
                     ),
                   ],
-                ),
-              ),
-            ),
-            Positioned(
-              top: 350, // Adjust position as needed
-              left: 35, // Adjust position as needed
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AIChatScreen(
-                        promptText: "Explain Photosynthesis",
-                        // messageText: messageController.text,
-                      ),
-                    ),
-                  );
-                  // Define the action when this prompt is clicked
-                  print('Prompt 1 clicked!');
-                  // Add your logic here...
-                },
-                child: Container(
-                  // padding: const EdgeInsets.all(18),
-                  height: screenHeight * 0.05,
-                  width: screenHeight * 0.4,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(
-                        255, 180, 216, 174), // Example background color
-                    borderRadius: BorderRadius.circular(40),
-                    border: Border.all(
-                      // Add this line to specify the border
-                      color: Colors
-                          .black, // You can change the color of the border here
-                      width: 2, // You can adjust the width of the border here
-                    ),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'Explain Photosynthesis',
-                      style: TextStyle(
-                        color: Color(0xff494949),
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 490, // Adjust position as needed
-              left: 35, // Adjust position as needed
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AIChatScreen(
-                        promptText: "What is addition?",
-                        // messageText: messageController.text,
-                      ),
-                    ),
-                  );
-                  // Define the action when this prompt is clicked
-                  print('Prompt 1 clicked!');
-                  // Add your logic here...
-                },
-                child: Container(
-                  // padding: const EdgeInsets.all(18),
-                  height: screenHeight * 0.05,
-                  width: screenHeight * 0.4,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(
-                        255, 180, 216, 174), // Example background color
-                    borderRadius: BorderRadius.circular(40),
-                    border: Border.all(
-                      // Add this line to specify the border
-                      color: Colors
-                          .black, // You can change the color of the border here
-                      width: 2, // You can adjust the width of the border here
-                    ),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'What is addition?',
-                      style: TextStyle(
-                        color: Color(0xff494949),
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 560, // Adjust position as needed
-              left: 35, // Adjust position as needed
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AIChatScreen(
-                        promptText: "What is subtraction?",
-                        // messageText: messageController.text,
-                      ),
-                    ),
-                  );
-                  // Define the action when this prompt is clicked
-                  print('Prompt 1 clicked!');
-                  // Add your logic here...
-                },
-                child: Container(
-                  // padding: const EdgeInsets.all(18),
-                  height: screenHeight * 0.05,
-                  width: screenHeight * 0.4,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(
-                        255, 180, 216, 174), // Example background color
-                    borderRadius: BorderRadius.circular(40),
-                    border: Border.all(
-                      // Add this line to specify the border
-                      color: Colors
-                          .black, // You can change the color of the border here
-                      width: 2, // You can adjust the width of the border here
-                    ),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'What is subtraction?',
-                      style: TextStyle(
-                        color: Color(0xff494949),
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 420, // Adjust position as needed
-              left: 35, // Adjust position as needed
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AIChatScreen(
-                        promptText: "What are types of vitamins?",
-                        // messageText: messageController.text,
-                      ),
-                    ),
-                  );
-                  // Define the action when this prompt is clicked
-                  print('Prompt 1 clicked!');
-                  // Add your logic here...
-                },
-                child: Container(
-                  // padding: const EdgeInsets.all(18),
-                  height: screenHeight * 0.05,
-                  width: screenHeight * 0.4,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(
-                        255, 180, 216, 174), // Example background color
-                    borderRadius: BorderRadius.circular(40),
-                    border: Border.all(
-                      // Add this line to specify the border
-                      color: Colors
-                          .black, // You can change the color of the border here
-                      width: 2, // You can adjust the width of the border here
-                    ),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'What are types of vitamins?',
-                      style: TextStyle(
-                        color: Color(0xff494949),
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 630, // Adjust position as needed
-              left: 35, // Adjust position as needed
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AIChatScreen(
-                        promptText: "What is HCF and LCM?",
-                        // messageText: messageController.text,
-                      ),
-                    ),
-                  );
-                  // Define the action when this prompt is clicked
-                  print('Prompt 1 clicked!');
-                  // Add your logic here...
-                },
-                child: Container(
-                  // padding: const EdgeInsets.all(18),
-                  height: screenHeight * 0.05,
-                  width: screenHeight * 0.4,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(
-                        255, 180, 216, 174), // Example background color
-                    borderRadius: BorderRadius.circular(40),
-                    border: Border.all(
-                      // Add this line to specify the border
-                      color: Colors
-                          .black, // You can change the color of the border here
-                      width: 2, // You can adjust the width of the border here
-                    ),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'What is HCF and LCM?',
-                      style: TextStyle(
-                        color: Color(0xff494949),
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
                 ),
               ),
             ),
@@ -549,11 +301,15 @@ class _aitutor_chatState extends State<aitutor_chat> {
           ],
         ),
         endDrawer: const Sidebar(),
-        bottomNavigationBar: SemiCircleCustomBar());
+        bottomNavigationBar: const SemiCircleCustomBar());
   }
 }
 
-Widget _buildInputField(BuildContext context) {
+typedef SendMessageCallback = void Function(String message);
+
+Widget _buildInputField(BuildContext context, SendMessageCallback sendMessage) {
+  TextEditingController _controller = TextEditingController();
+
   return Container(
     padding: const EdgeInsets.symmetric(horizontal: 10.0),
     decoration: BoxDecoration(
@@ -562,41 +318,24 @@ Widget _buildInputField(BuildContext context) {
     ),
     child: Row(
       children: [
-        const Expanded(
+        Expanded(
           child: TextField(
-            decoration: InputDecoration(
+            controller: _controller,
+            decoration: const InputDecoration(
               hintText: "Type a message",
               border: InputBorder.none,
             ),
           ),
         ),
-        Positioned(
-          top: 830,
-          left: 12,
-          child: IconButton(
-            icon: const Icon(Icons.mic_outlined),
-            onPressed: () {
-              // Implement send action
-            },
-          ),
-        ),
-        Positioned(
-          child: IconButton(
-            icon: const Icon(Icons.send_outlined),
-            onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => AIChatScreen(
-              //       promptText: "Message",
-              //       messageText:
-              //           messageController.text, // Pass the entered message
-              //     ),
-              //   ),
-              // );
-              // Implement mic action
-            },
-          ),
+        IconButton(
+          icon: Icon(Icons.send_outlined),
+          onPressed: () {
+            String message = _controller.text;
+            if (message.isNotEmpty) {
+              sendMessage(message);
+              _controller.clear();
+            }
+          },
         ),
       ],
     ),

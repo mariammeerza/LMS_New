@@ -302,7 +302,7 @@ class Explanation3 extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: SemiCircleCustomBar(),
+      bottomNavigationBar: const SemiCircleCustomBar(),
     );
   }
 }

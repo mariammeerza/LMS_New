@@ -141,7 +141,7 @@ class Explanation2 extends StatelessWidget {
                             Clipboard.setData(
                               const ClipboardData(
                                 text:
-                                    'Which of these pair are equally distant from 11?',
+                                    'Which of these pair are equally distant from 11? ',
                               ),
                             );
                             ScaffoldMessenger.of(context).showSnackBar(
@@ -301,7 +301,7 @@ class Explanation2 extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: SemiCircleCustomBar(),
+      bottomNavigationBar: const SemiCircleCustomBar(),
     );
   }
 }
