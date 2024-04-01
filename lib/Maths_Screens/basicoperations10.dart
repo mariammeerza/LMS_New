@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter_application_1/Maths_Screens/explanation10.dart';
-import 'package:flutter_application_1/Maths_Screens/explanation7.dart';
-import 'package:flutter_application_1/Maths_Screens/explanation8.dart';
-import 'package:flutter_application_1/Maths_Screens/explanation9.dart';
 
 class BasicOperations10 extends StatefulWidget {
   const BasicOperations10({super.key});
@@ -18,6 +15,7 @@ class _BasicOperations10State extends State<BasicOperations10> {
     String? selectedOption;
   String correctOption = 'c'; 
   late Timer _timer;
+    bool isOptionSelected = false;
 
   @override
   void initState() {
@@ -28,7 +26,7 @@ class _BasicOperations10State extends State<BasicOperations10> {
   void startTimer() {
     const duration = Duration(seconds: 20);
     _timer = Timer(duration, () {
-      _showTimeUpDialog();
+      // _showTimeUpDialog();
     });
   }
 
@@ -306,14 +304,14 @@ class _BasicOperations10State extends State<BasicOperations10> {
             child: SizedBox(
               width: MediaQuery.of(context).size.width - 250,
               child: TextButton(
-                onPressed: () {
+                onPressed:isOptionSelected ? () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const BasicOperations10(),
                     ),
                   );
-                },
+                }:null,
                 style: TextButton.styleFrom(
                   foregroundColor: const Color(0xff494949),
                   backgroundColor: Colors.yellow,
@@ -374,6 +372,9 @@ class _BasicOperations10State extends State<BasicOperations10> {
   void _showResultDialog(String selectedOption) {
     bool isCorrect = selectedOption == correctOption;
     _timer.cancel();
+    setState(() {
+    isOptionSelected = true;
+  });
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -498,24 +499,25 @@ class _BasicOperations10State extends State<BasicOperations10> {
     );
   }
 
-  void _showTimeUpDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Time\'s Up!'),
-          content: const Text(
-              'You ran out of time. The correct answer is: c) 11.27 and 10.73'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
-  }
+//   void _showTimeUpDialog() {
+//     showDialog(
+//       context: context,
+//       builder: (BuildContext context) {
+//         return AlertDialog(
+//           title: const Text('Time\'s Up!'),
+//           content: const Text(
+//               'You ran out of time. The correct answer is: c) 11.27 and 10.73'),
+//           actions: <Widget>[
+//             TextButton(
+//               onPressed: () {
+//                 Navigator.of(context).pop();
+//               },
+//               child: const Text('OK'),
+//             ),
+//           ],
+//         );
+//       },
+//     );
+//   }
+// }
 }

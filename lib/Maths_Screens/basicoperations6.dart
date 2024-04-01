@@ -18,6 +18,7 @@ class _BasicOperations6State extends State<BasicOperations6> {
     String? selectedOption;
   String correctOption = 'd'; // Correct option is 'c'
   late Timer _timer;
+   bool isOptionSelected = false;
 
   @override
   void initState() {
@@ -28,7 +29,7 @@ class _BasicOperations6State extends State<BasicOperations6> {
   void startTimer() {
     const duration = Duration(seconds: 20);
     _timer = Timer(duration, () {
-      _showTimeUpDialog();
+      // _showTimeUpDialog();
     });
   }
 
@@ -306,14 +307,14 @@ class _BasicOperations6State extends State<BasicOperations6> {
             child: SizedBox(
               width: MediaQuery.of(context).size.width - 250,
               child: TextButton(
-                onPressed: () {
+                onPressed:isOptionSelected ? () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const BasicOperations7(),
                     ),
                   );
-                },
+                }:null,
                 style: TextButton.styleFrom(
                   foregroundColor: const Color(0xff494949),
                   backgroundColor: Colors.yellow,
@@ -370,6 +371,9 @@ class _BasicOperations6State extends State<BasicOperations6> {
   void _showResultDialog(String selectedOption) {
     bool isCorrect = selectedOption == correctOption;
     _timer.cancel();
+    setState(() {
+    isOptionSelected = true;
+  });
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -494,24 +498,24 @@ class _BasicOperations6State extends State<BasicOperations6> {
     );
   }
 
-  void _showTimeUpDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Time\'s Up!'),
-          content: const Text(
-              'You ran out of time. The correct answer is: c) 11.27 and 10.73'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
-  }
+  // void _showTimeUpDialog() {
+  //   showDialog(
+  //     context: context,
+  //     builder: (BuildContext context) {
+  //       return AlertDialog(
+  //         title: const Text('Time\'s Up!'),
+  //         content: const Text(
+  //             'You ran out of time. The correct answer is: c) 11.27 and 10.73'),
+  //         actions: <Widget>[
+  //           TextButton(
+  //             onPressed: () {
+  //               Navigator.of(context).pop();
+  //             },
+  //             child: const Text('OK'),
+  //           ),
+  //         ],
+  //       );
+  //     },
+  //   );
+  // }
 }
